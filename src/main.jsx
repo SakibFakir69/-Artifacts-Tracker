@@ -11,6 +11,7 @@ import AddArtifcats from "./Components/AddArtifcats.jsx";
 import AuthLayout from "./Auth- entication/AuthLayout.jsx";
 import SignIn from "./Auth- entication/SignIn.jsx";
 import SignUp from "./Auth- entication/SignUp.jsx";
+import PrivateRoute from "./Private/PrivateRoute.jsx";
 
 const route = createBrowserRouter([
   {
@@ -26,13 +27,13 @@ const route = createBrowserRouter([
       // allartifacts
       {
         path:'/allartifacts',
-        element: <AllArtifacts/>
+        element: <PrivateRoute><AllArtifacts/></PrivateRoute>
       },
 
       // add artifacts
       {
         path: '/addartifacts',
-        element: <AddArtifcats/>
+        element:<PrivateRoute> <AddArtifcats/></PrivateRoute>
       },
 
 

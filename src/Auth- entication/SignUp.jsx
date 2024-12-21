@@ -65,6 +65,11 @@ function SignUp() {
       setError("password are not same");
       return;
     }
+    if(photoURL==="")
+    {
+      setError('Fil photoURL filed');
+      return;
+    }
 
 
     CreateUser(email, password)
@@ -72,6 +77,7 @@ function SignUp() {
         setloading(false);
         const users = Result.user;
         setuser(users);
+        setloading(false);
         
         goTohome("/");
         toast.success("Sign up succesfully");
@@ -107,7 +113,7 @@ function SignUp() {
       <ToastContainer />
 
       <section class="bg-gray-50 dark:bg-gray-900   ">
-        
+
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0 mb-2">
           <a
             href="#"

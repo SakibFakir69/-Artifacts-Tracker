@@ -14,10 +14,13 @@ function Navbar() {
   // log out
 
   const logout = () => {
+
     setloading(false);
+    
+
     signOut(Auth)
       .then((result) => {
-        setloading(true);
+        // setloading(false);
         console.log("lo out");
         setuser(null);
         toast.success('Log out succesfully')
@@ -80,7 +83,7 @@ function Navbar() {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Historical Artifacts Tracker</a>
+          <a className="btn btn-ghost md:text-2xl">Historical Artifacts Tracker</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -102,7 +105,7 @@ function Navbar() {
             </div>
           ) : (
             <div>
-              <NavLink  to={"/authloayout/signup"} className={'btn px-6 border-2'}>Log In</NavLink>
+              <NavLink  to={"/authloayout/signin"} className={'btn px-6 border-2'}>Log In</NavLink>
 
             </div>
           )}
