@@ -1,0 +1,16 @@
+
+Layout & Page Structure
+Navbar: The navbar will contain the 
+Website Name/Logo: Should reflect the theme,
+Home, 
+All Artifacts
+Add Artifacts (Private/Protected Route)
+Conditional “Login” and “Logout” 
+
+The “Login” button is conditional, if the user is not logged in it will show the “Login” Button. If a user clicks on “Login” it will redirect to the login page. 
+But If the user is logged in here you will show the user photoURL, when you hover over the image it will show the displayName. And it will show the “Logout” button.  
+On clicking on My Profile it will show a dropdown menu. It will show the following routes -
+My Artifacts (Private/Protected Route)
+Liked Artifacts (Private/Protected Route)
+Main Section:  Main Section will show different pages based on routes.  
+Footer: A Footer with all relevant information and eye-catching design.
