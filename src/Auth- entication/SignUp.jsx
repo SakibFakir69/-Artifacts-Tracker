@@ -3,35 +3,86 @@ import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MyContext } from "../Context/AuthContextapi";
 import useAuth from "../hooks/useAuth";
+import Auth from "../Firebase/ConfigF";
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
 
 function SignUp() {
-  const { CreateUser, CreateUserWithGoogle, setuser, setloading } =
+  const { CreateUser, CreateUserWithGoogle, setuser, setloading,setphoto } =
     useContext(MyContext);
 
   const goTohome = useNavigate();
+  const [Error, setError] = useState("");
+  console.log(Error);
+
+  //   passvalidation
+
+  const PasswordValidation = (pass) => {
+    const len = pass.length >= 6;
+    const number = /[0-9]/.test(pass);
+    const lowerCase = /[a-z]/.test(pass);
+    const UpperCase = /[A-Z]/.test(pass);
+
+    if (!len) {
+      return "Please Enter 6 digit password";
+    }
+    if (!number) {
+      return "Please Enter number";
+    }
+    if (!UpperCase) {
+      return "Please Enter 1 uppercase atlast";
+    }
+    if (!lowerCase) {
+      return "Please Enter 1 lowerCase atlast";
+    }
+  };
 
   const createUserhandel = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    const { email, password } = data;
+    const { email, password ,
+      confirmPassword
+      } = data;
+    console.log(data);
     setloading(true);
+
+    // if (password !== data.confirm - password) {
+    //   return "password not same";
+    // }
+
+    // test
+
+    const passTest = PasswordValidation(password);
+
+    if (passTest) {
+      setError(passTest);
+      return;
+    }
+    if(password!==confirmPassword)
+    {
+      setError("password are not same");
+      return;
+    }
+
 
     CreateUser(email, password)
       .then((Result) => {
         setloading(false);
         const users = Result.user;
         setuser(users);
+        
         goTohome("/");
+        toast.success("Sign up succesfully");
+        setphoto(data.photoURL);
+
       })
       .catch((error) => {
         console.log("we founed error on sign up page", error.code);
       });
 
     //   google login
-
- 
   };
   const googleButton = () => {
     setloading(true);
@@ -39,6 +90,9 @@ function SignUp() {
       .then((result) => {
         goTohome("/");
         setloading(false);
+        const users = result.user;
+        setuser(users);
+        toast.success("sinn up succesfully");
       })
       .catch((error) => {
         console.log(
@@ -47,11 +101,13 @@ function SignUp() {
         );
       });
   };
-  
+
   return (
-    <div>
-      <section class="bg-gray-50 dark:bg-gray-900">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div className="w-full max-w-full">
+      <ToastContainer />
+
+      <section class="bg-gray-50 dark:bg-gray-900   ">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0 mb-2">
           <a
             href="#"
             class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
@@ -65,11 +121,11 @@ function SignUp() {
           </a>
           <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white mt-4">
                 Create an account
               </h1>
               <form
-                class="space-y-4 md:space-y-6"
+                class="space-y-4 md:space-y-6 mt-20"
                 action="#"
                 onSubmit={createUserhandel}
               >
@@ -89,6 +145,27 @@ function SignUp() {
                     required=""
                   />
                 </div>
+
+                {/* photo */}
+                <div>
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="photoUrl"
+                    id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Enter your photo-URL"
+                    required=""
+                  />
+                </div>
+
+
+
                 <div>
                   <label
                     for="email"
@@ -120,6 +197,10 @@ function SignUp() {
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                   />
+                </div>
+                {/* error */}
+                <div>
+                  <p>{Error && <p className="text-red-500">{Error}</p>}</p>
                 </div>
 
                 <div>
@@ -213,9 +294,16 @@ function SignUp() {
                 Sign in with Google
               </button>
             </div>
+
+            
           </div>
+          <div className="mb-36"> 
+
+            </div>
         </div>
+        
       </section>
+      
     </div>
   );
 }

@@ -14,6 +14,8 @@ export const MyContext = createContext();
 function AuthContextapi({ children }) {
   const [user, setuser] = useState(null);
   const [loading, setloading] = useState(true);
+  const [ photo , setphoto ] = useState(null);
+  console.log(photo);
   console.log("hello form authContex");
 
   // create User
@@ -34,6 +36,13 @@ function AuthContextapi({ children }) {
   const LoginUser = (email, password) => {
     return signInWithEmailAndPassword(Auth, email, password);
   };
+  // google login 
+
+  const GoogleLoginIn = ()=>{
+    return signInWithPopup(Auth,Provider);
+
+  }
+  
 
   const authInfo = {
     user,
@@ -41,7 +50,7 @@ function AuthContextapi({ children }) {
     loading,
     setloading,
     CreateUser,
-    CreateUserWithGoogle,
+    CreateUserWithGoogle,LoginUser,GoogleLoginIn
   };
 
   // onchanged
