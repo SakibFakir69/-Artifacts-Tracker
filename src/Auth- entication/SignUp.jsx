@@ -5,47 +5,49 @@ import { MyContext } from "../Context/AuthContextapi";
 import useAuth from "../hooks/useAuth";
 
 function SignUp() {
+  const { CreateUser, CreateUserWithGoogle, setuser, setloading } =
+    useContext(MyContext);
 
-    const {CreateUser, CreateUserWithGoogle,setuser,setloading} = useContext(MyContext);
-
-
-    const goTohome= useNavigate();
-
-
-
-
-  
+  const goTohome = useNavigate();
 
   const createUserhandel = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    const {email , password } = data;
+    const { email, password } = data;
     setloading(true);
 
-    CreateUser(email,password)
-    .then((Result)=>{
+    CreateUser(email, password)
+      .then((Result) => {
         setloading(false);
         const users = Result.user;
         setuser(users);
-        goTohome('/');
+        goTohome("/");
+      })
+      .catch((error) => {
+        console.log("we founed error on sign up page", error.code);
+      });
 
+    //   google login
 
-    })
-    .catch((error)=>{
-        console.log('we founed error on sign up page',error.code)
-  })
-
-//   google login
-
-    
-  
-   
-    
-    
+ 
   };
-
+  const googleButton = () => {
+    setloading(true);
+    CreateUserWithGoogle()
+      .then((result) => {
+        goTohome("/");
+        setloading(false);
+      })
+      .catch((error) => {
+        console.log(
+          "we founed error on sign up page to google singup",
+          error.code
+        );
+      });
+  };
+  
   return (
     <div>
       <section class="bg-gray-50 dark:bg-gray-900">
@@ -178,20 +180,20 @@ function SignUp() {
                 </div>
 
                 <p class="text-sm font-light text-gray-500 dark:text-gray-400 flex justify-center">
-                  Already have an account?{" "} 
+                  Already have an account?{" "}
                   <NavLink
-                    to={'/authloayout/signin'}
+                    to={"/authloayout/signin"}
                     class="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
-                     Sign in
+                    Sign in
                   </NavLink>
                 </p>
               </form>
             </div>
-           
+
             <div className="flex justify-center">
-                
               <button
+                onClick={googleButton}
                 type="button"
                 class="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 me-2 mb-2"
               >
