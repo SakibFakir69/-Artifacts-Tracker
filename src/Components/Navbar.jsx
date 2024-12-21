@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function Navbar() {
-  const { user, setloading, setuser } = useAuth();
+  const { user, setloading, setuser,photo } = useAuth();
   console.log(user);
 
   // log out
@@ -88,8 +88,8 @@ function Navbar() {
 
         <div className="navbar-end flex gap-4 ">
 
-          <div className="">
-            <img src={user?.photoURL} alt="!" />
+          <div className="size-10">
+            <img src={user?.photoURL || photo} alt="!" />
           </div>
 
           {user ? (
