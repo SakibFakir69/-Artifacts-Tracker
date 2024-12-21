@@ -1,12 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function Navbar() {
 
+    const {user} = useAuth();
+    console.log(user);
+
+
     const links = <>
-    <li><NavLink>Home</NavLink></li>
-    <li><NavLink>All Artifacts</NavLink></li>
-    <li><NavLink>Add Artifacts</NavLink></li>
+    <li><NavLink to={'/'}>Home</NavLink></li>
+    <li><NavLink to={'/allartifacts'}>All Artifacts</NavLink></li>
+    <li><NavLink to={'/addartifacts'}>Add Artifacts</NavLink></li>
 
     <li><NavLink>Myprofile
 
@@ -24,8 +29,9 @@ function Navbar() {
 
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div className="">
+      <div className="navbar bg-transparent border shadow-md ">
+
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,7 +75,7 @@ function Navbar() {
 
 
 
-          <a className="btn">Log in</a>
+          <NavLink className={'btn'} to={'/authloayout/signup'}>Log In</NavLink>
 
 
         </div>
