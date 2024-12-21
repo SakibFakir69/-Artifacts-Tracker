@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
 
 
 function App() {
@@ -6,7 +9,20 @@ function App() {
 
   return (
     <div>
-      <h1 className='text-xl'>test</h1>
+      <header>
+        <Navbar/>
+      </header>
+      
+
+      {/*  */}
+      <main>
+        <Outlet/>
+        <h1>oulet</h1>
+      </main>
+
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   )
 }
