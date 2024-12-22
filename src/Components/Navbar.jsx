@@ -5,7 +5,9 @@ import Auth from "../Firebase/ConfigF";
 import { signOut } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import { motion } from "motion/react";
+import { easeIn } from "motion";
+ 
 
 function Navbar() {
   const { user, setloading, setuser,photo } = useAuth();
@@ -83,7 +85,10 @@ function Navbar() {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost md:text-2xl">Historical Artifacts Tracker</a>
+          <motion.a whileHover={{scale:1.1 , opacity:0.9}} 
+          className="btn-ghost md:text-2xl">Historical Artifacts Tracker</motion.a>
+          
+
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
