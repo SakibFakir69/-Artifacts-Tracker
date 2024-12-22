@@ -20,8 +20,10 @@ function Banner() {
 
          <div className="mx-auto max-w-3xl text-center object-cover">
 
-         <div className="w-full h-full absolute flex justify-center items-center border top-0 left-0">
-         <Lottie animationData={Animation} className="w-11/12 h-64"/>
+         <div className=" opacity-45">
+
+          
+ 
             
 
          </div>

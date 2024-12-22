@@ -17,7 +17,7 @@ function App() {
       {/*  */}
       <main>
         <Outlet/>
-        <h1>oulet</h1>
+        
       </main>
 
       <footer>
