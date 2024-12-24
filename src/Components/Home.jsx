@@ -1,6 +1,7 @@
 
 
 import React from 'react'
+import Footer from './Footer'
 import Banner from '../Pages/Banner'
 import ExtraPage1 from '../Pages/ExtraPage1'
 import ExtraPage2 from '../Pages/ExtraPage2'
@@ -21,6 +22,8 @@ function Home() {
 
 
       </main>
+
+      <Footer/>
 
 
 

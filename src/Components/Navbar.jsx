@@ -53,6 +53,7 @@ function Navbar() {
           </select>
         </NavLink>
       </li>
+      <li><NavLink to={'/mylikedartifact'}>mylikedartifact</NavLink></li>
     </>
   );
 

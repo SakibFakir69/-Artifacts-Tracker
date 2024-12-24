@@ -18,6 +18,9 @@ function AuthContextapi({ children }) {
   console.log(photo);
   console.log("hello form authContex");
 
+
+  const [ likedpost , setlikedpost ] = useState([]);
+
   // create User
   // reg
   const CreateUser = (email, password) => {
@@ -50,7 +53,7 @@ function AuthContextapi({ children }) {
     loading,
     setloading,
     CreateUser,
-    CreateUserWithGoogle,LoginUser,GoogleLoginIn
+    CreateUserWithGoogle,LoginUser,GoogleLoginIn,setlikedpost
   };
 
   // onchanged

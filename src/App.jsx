@@ -21,7 +21,7 @@ function App() {
       </main>
 
       <footer>
-        <Footer/>
+        
       </footer>
     </div>
   )

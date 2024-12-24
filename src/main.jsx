@@ -12,6 +12,8 @@ import AuthLayout from "./Auth- entication/AuthLayout.jsx";
 import SignIn from "./Auth- entication/SignIn.jsx";
 import SignUp from "./Auth- entication/SignUp.jsx";
 import PrivateRoute from "./Private/PrivateRoute.jsx";
+import Detailspage from "./Components/Detailspage.jsx";
+import MyLikedArtifact from "./Components/MyLikedArtifact.jsx";
 
 const route = createBrowserRouter([
   {
@@ -22,53 +24,72 @@ const route = createBrowserRouter([
       // home
       {
         path: "/",
-        element: <Home/>
+        element: <Home />,
       },
       // allartifacts
       {
-        path:'/allartifacts',
-        element: <PrivateRoute><AllArtifacts/></PrivateRoute>
+        path: "/allartifacts",
+        element: (
+          <PrivateRoute>
+            <AllArtifacts />
+          </PrivateRoute>
+        ),
       },
 
       // add artifacts
       {
-        path: '/addartifacts',
-        element:<PrivateRoute> <AddArtifcats/></PrivateRoute>
+        path: "/addartifacts",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddArtifcats />
+          </PrivateRoute>
+        ),
+      },
+      
+      {
+        path : '/mylikedartifact',
+        element : <MyLikedArtifact/>,
+
       },
 
+      // details page
 
-      // authLayout
-
-
+      {
+        path: "/detailspage/:id",
+        element: (
+          <PrivateRoute>
+            <Detailspage />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/detailspage/${params.id}`),
+      },
+      // my liked artifact
+     
     ],
-    
   },
   // authlayout
   {
-    path : '/authloayout',
-    element:<AuthLayout/>,
-    children:[
+    path: "/authloayout",
+    element: <AuthLayout />,
+    children: [
       {
-        path: '/authloayout/signin',
-        element: <SignIn/>
+        path: "/authloayout/signin",
+        element: <SignIn />,
       },
       {
-        path:'/authloayout/signup',
-        element: <SignUp/>
-      }
-    ]
-  }
+        path: "/authloayout/signup",
+        element: <SignUp />,
+      },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  
-    <StrictMode>
-
-      <AuthContextapi>
+  <StrictMode>
+    <AuthContextapi>
       <RouterProvider router={route} />
-      </AuthContextapi>
-
-
-    </StrictMode>
- 
+    </AuthContextapi>
+  </StrictMode>
 );
