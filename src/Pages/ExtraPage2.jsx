@@ -5,7 +5,7 @@ import { animate } from "motion";
 import { Scale } from "lucide-react";
 function ExtraPage2() {
   return (
-    <div className="m-4 border px-4 mt-10">
+    <div className="m-4 border px-4 mt-10 rounded-md ">
       <h1 className="text-4xl font-semibold mb-4 text-center">
         {" "}
         A{" "}
@@ -28,116 +28,140 @@ function ExtraPage2() {
       {/* name,country,time */}
 
       <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
-        <motion.div>
-          
+        <motion.div  className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md ">
+
           <img src="/KingTutankhamunsMaskegpt.jpg" alt="egpt" />
-          <p>
-            Name: <span>King Tutankhamun's Mask</span>
+          
+         <div className="ml-2">
+         <p>
+            <span className="text-green-500 md:text-xl">Name</span>: <span>King Tutankhamun's Mask</span>
           </p>
           <p>
-            Country: <span>Egpt</span>
+          
+            <span className="text-red-500 md:text-xl">Country :</span> <i class="ri-flag-line"></i> <span>: Egpt</span>
           </p>
           <p>
-            Time: <span>Around 2500 BC</span>
+            <span className="text-orange-500 md:text-xl">Time </span><i class="ri-calendar-schedule-line"></i>: <span>Around 2500 BC</span>
           </p>
+         </div>
+
         </motion.div>
 
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
+          
           <img src="/TheCrownJewelsoftheUnitedKingdomuk.jpg" alt="england" />
 
-          <p>
-            Name: <span>he Crown Jewels of the United Kingdom</span>
+         <div className="ml-2">
+         <p>
+         <span className="text-green-500 md:text-xl">Name</span>: <span>he Crown Jewels of the United Kingdom</span>
           </p>
           <p>
-            Country : <span>England</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i> <span>England</span>
           </p>
           <p>
-            Time: <span>Varies (12th century)</span>
+          <span className="text-orange-500 md:text-xl">Time </span> <i class="ri-calendar-schedule-line"></i> : <span>Varies (12th century)</span>
           </p>
+         </div>
+
         </div>
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           <img src="/TheDeadSeaScrollspleastine.jpg" alt="pleastine" />
+          <div className="ml-2">
           <p>
             {" "}
-            Name : <span>The DeadScrolls</span>
+            <span className="text-green-500 md:text-xl">Name</span>: <span>The DeadScrolls</span>
           </p>
           <p>
-            Country : <span>Pleastine</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i> <span>Pleastine</span>
           </p>
           <p>
-            Time : <span>2nd century BCE</span>
+          <span className="text-orange-500 md:text-xl">Time </span>  <i class="ri-calendar-schedule-line"></i> : <span>2nd century BCE</span>
           </p>
+          </div>
+
         </div>
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           <img src="/TheMagnaCartaengland.jpg" alt="egpt" />
 
-          <p>
+         <div className="ml-2">
+         <p>
             {" "}
-            Name : <span>The Magna Carta </span>
+            N<span className="text-green-500 md:text-xl">Name</span>: <span>The Magna Carta </span>
           </p>
           <p>
-            Country : <span>Grece</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i> <span>Grece</span>
           </p>
           <p>
-            Time : <span>1215 AD</span>
+          <span className="text-orange-500 md:text-xl">Time </span><i class="ri-calendar-schedule-line"></i> : <span>1215 AD</span>
           </p>
+         </div>
         </div>
 
-        <div>
+        <div
+        className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
+
           <img src="/TheTerracottaArmychina.jpg" alt="egpt" />
 
+          <div className="ml-2">
           <p>
             {" "}
-            Name : <span>The Terracotta Army china</span>
+            <span className="text-green-500 md:text-xl">Name</span>: <span>The Terracotta Army </span>
           </p>
           <p>
-            Country : <span>Egpt</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i>  <span>Egpt</span>
           </p>
           <p>
-            Time : <span>210 BC</span>
+          <span className="text-orange-500 md:text-xl">Time </span><i class="ri-calendar-schedule-line"></i> : <span>210 BC</span>
           </p>
+          </div>
         </div>
 
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           <img src="/TheElginMarblesgreec.jpg" />
+          <div className="ml-2">
           <p>
             {" "}
-            Name : <span>The Elgin Marbles </span>
+            <span className="text-green-500 md:text-xl">Name</span>:<span>The Elgin Marbles </span>
           </p>
           <p>
-            Country : <span>Grece</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i> <span>Grece</span>
           </p>
           <p>
-            Time : <span>447 BC</span>
+          <span className="text-orange-500 md:text-xl">Time </span>  <i class="ri-calendar-schedule-line"></i> : <span>447 BC</span>
           </p>
+          </div>
         </div>
 
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           <img src="/TheRosettaStone.jpg" />
-          <p>
+         <div className="ml-2">
+         <p>
             {" "}
-            Name : <span>The Rosetta Stone </span>
+            <span className="text-green-500 md:text-xl">Name</span>: <span>The Rosetta Stone </span>
           </p>
           <p>
-            Country : <span>Egpt</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i>  <span>Egpt</span>
           </p>
           <p>
-            Time : <span>196 BC</span>
+          <span className="text-orange-500 md:text-xl">Time </span><i class="ri-calendar-schedule-line"></i> : <span>196 BC</span>
           </p>
+         </div>
         </div>
 
-        <div>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           <img src="/TheMonaLisaitlaiy.jpg" />
+          <div className="ml-2">
           <p>
             {" "}
-            Name : <span>The Rosetta Stone </span>
+            <span className="text-green-500 md:text-xl">Name</span>: <span>The Rosetta Stone </span>
           </p>
           <p>
-            Country : <span>Italy</span>
+          <span className="text-red-500">Country :</span> <i class="ri-flag-line"></i>  <span>Italy</span>
           </p>
           <p>
-            Time : <span>1503 AD</span>
+          <span className="text-orange-500 md:text-xl">Time </span> <i class="ri-calendar-schedule-line"></i>: <span>1503 AD</span>
           </p>
+          </div>
         </div>
       </section>
     </div>
