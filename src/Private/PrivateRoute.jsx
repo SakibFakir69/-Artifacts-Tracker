@@ -16,12 +16,12 @@ function PrivateRoute({children}) {
     {
         return <p>Loading..</p>
     }
-    if(!user){
-        return <Navigate to={'/authloayout/signin'}/>
+    if(user){
+        return children;
     }
 
 
-  return children;
+  return <Navigate to={'/authloayout/signin'}/>
 }
 
 export default PrivateRoute

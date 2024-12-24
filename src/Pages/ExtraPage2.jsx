@@ -5,7 +5,8 @@ import { animate } from "motion";
 import { Scale } from "lucide-react";
 function ExtraPage2() {
   return (
-    <div className="m-4 border px-4 mt-10 rounded-md ">
+    <div className="m-4 border px-4 mt-10 rounded-md  p-4 ">
+
       <h1 className="text-4xl font-semibold mb-4 text-center">
         {" "}
         A{" "}
@@ -27,7 +28,8 @@ function ExtraPage2() {
       {/* {gave me details all artifact} */}
       {/* name,country,time */}
 
-      <section className="grid md:grid-cols-4 grid-cols-2 gap-4">
+      <section className="grid md:grid-cols-4 items-center justify-center gap-4">
+
         <motion.div  className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md ">
 
           <img src="/KingTutankhamunsMaskegpt.jpg" alt="egpt" />
