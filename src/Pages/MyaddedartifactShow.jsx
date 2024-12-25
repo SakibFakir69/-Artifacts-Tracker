@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function MyaddedartifactShow({ data ,onDeletehandel}) {
   const {
@@ -46,7 +47,8 @@ function MyaddedartifactShow({ data ,onDeletehandel}) {
           </div>
           
           <div className="flex justify-evenly">
-            <button className="px-8 py-2 border rounded-md hover:shadow-xl bg-green-500 text-white font-semibold">Update</button>
+            <NavLink to={`/updatepage/${_id}`} className="px-8 py-2 border rounded-md hover:shadow-xl bg-green-500 text-white font-semibold">Update</NavLink>
+
             <button className="px-8 py-2  border rounded-md hover:shadow-xl text-red-500 bg-black font-semibold" onClick={()=>onDeletehandel(_id)}>Delete</button>
           </div>
                   

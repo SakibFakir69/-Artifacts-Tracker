@@ -7,7 +7,7 @@ function ShowDetailsPage({ alldata }) {
   // click like button incarase by one
 
   const {setlikedpost} = useAuth();
-  const {
+  let {
     Artifact_Name,
     Artifact_Image,
     Artifact_Type,
@@ -21,7 +21,9 @@ function ShowDetailsPage({ alldata }) {
 
   const {user} = useAuth();
 
-  const [ like , setlike ] = useState(true);
+  const [ like , setlike ] = useState(false);
+
+  const [likecount , setlikecount ] = useState(LikeCount);
 
   
 
@@ -30,14 +32,24 @@ function ShowDetailsPage({ alldata }) {
   
 
 
-    const counter = like ? 1 : -1;
+    const counter = like ? -1 : 1;
+
+    console.log(counter)
+    if(counter<0)
+    {
+      LikeCount=-1;
+      
+    }
+    setlike((prev)=>!prev)
 
     axios.put(`http://localhost:5000/detailspage/like/${_id}`,{increment: counter})
     .then((response)=>{
         if(response.status===200)
 
         {
+          setlikecount((prev)=> prev+counter);
             alert("liked")
+            
 
         }
     })
@@ -95,13 +107,14 @@ function ShowDetailsPage({ alldata }) {
           </div>
           <div className="flex flex-wrap  justify-center">
             
-          <i  onClick={handleLike} class="ri-thumb-up-line text-2xl md:text-3xl"></i>{LikeCount}
+          <i  onClick={handleLike} className={`${like ? 'text-blue-400 ri-thumb-up-line text-2xl md:text-3xl' : 'ri-thumb-up-line text-2xl md:text-3xl'}`}></i>{likecount}
 
         
           
            
           </div>
-          <p className="text-center -mt-4">{like && <p>Liked</p>}</p>
+          <p className="text-center -mt-4">{like && <p>Like</p>}</p>
+
         </div>
       </section>
     </div>

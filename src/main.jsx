@@ -15,6 +15,7 @@ import PrivateRoute from "./Private/PrivateRoute.jsx";
 import Detailspage from "./Components/Detailspage.jsx";
 import MyLikedArtifact from "./Components/MyLikedArtifact.jsx";
 import MyArtifactsAdd from "./Components/MyArtifactsAdd.jsx";
+import UpdatePage from "./Components/UpdatePage.jsx";
 
 const route = createBrowserRouter([
   {
@@ -57,6 +58,12 @@ const route = createBrowserRouter([
       {
         path : "/myadedaartifacts",
         element : <MyArtifactsAdd/>
+      },
+      {
+        path: "/updatepage/:id",
+        element: <UpdatePage/>,
+        loader : ({params})=> fetch(`http://localhost:5000/myaddedartifacts/${params.id}`)
+        
       },
 
       // details page
