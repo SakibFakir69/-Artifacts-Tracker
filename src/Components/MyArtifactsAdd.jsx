@@ -6,6 +6,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import useAuth from '../hooks/useAuth';
 import MyaddedartifactShow from '../Pages/MyaddedartifactShow';
+import Swal from 'sweetalert2';
+
 function MyArtifactsAdd() {
     const {user} = useAuth();
 
@@ -14,6 +16,7 @@ function MyArtifactsAdd() {
     useEffect(()=>{
         axios.get(`http://localhost:5000/myaddedartifacts?email=${user?.email}`)
         .then((res)=>{
+            
             console.log(res.data)
             setdata(res.data);
         })
@@ -25,12 +28,34 @@ function MyArtifactsAdd() {
 
     const onDeletehandel = (id)=>{
 
-        axios.delete(`http://localhost:5000/myaddedartifacts/${id}`)
-        .then((res)=>{
-            alert("deleted");
-            const filterdeleted = data.filter((item)=> item._id!==id);
-            setdata(filterdeleted);
-        });
+     
+     
+            
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+              }).then((result) => {
+                if (result.isConfirmed) {
+
+                    axios.delete(`http://localhost:5000/myaddedartifacts/${id}`)
+                    .then(()=>{
+
+                        const filterdeleted = data.filter((item)=> item._id!==id);
+                        setdata(filterdeleted);Swal.fire("Deleted Succesfully")
+
+                    })
+                 
+                  
+                }
+              });
+         
+   
 
         console.log("filter button clcked")
 
