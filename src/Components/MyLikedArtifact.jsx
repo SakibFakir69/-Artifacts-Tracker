@@ -20,15 +20,17 @@ function MyLikedArtifact() {
     },[user?.email])
     console.log(liked)
  
-  return <div>
-    <h1>
+  return <div className="px-4">
+    <h1 className="mt-6 md:text-4xl font-semibold text-2xl text-center">My Liked Artifacts</h1>
+    
+    <div className="grid md:grid-cols-3 grid-cols-1">
         {
             liked.map((item,key)=> <LikeArtifact alldata={item} key={key}/>)
         }
     
 
 
-    </h1>
+    </div>
   </div>;
 }
 

@@ -14,6 +14,7 @@ import SignUp from "./Auth- entication/SignUp.jsx";
 import PrivateRoute from "./Private/PrivateRoute.jsx";
 import Detailspage from "./Components/Detailspage.jsx";
 import MyLikedArtifact from "./Components/MyLikedArtifact.jsx";
+import MyArtifactsAdd from "./Components/MyArtifactsAdd.jsx";
 
 const route = createBrowserRouter([
   {
@@ -49,8 +50,13 @@ const route = createBrowserRouter([
       
       {
         path : '/mylikedartifact',
-        element : <MyLikedArtifact/>,
+        element :<PrivateRoute><MyLikedArtifact/></PrivateRoute>
 
+      },
+      // my added artifacts 
+      {
+        path : "/myadedaartifacts",
+        element : <MyArtifactsAdd/>
       },
 
       // details page

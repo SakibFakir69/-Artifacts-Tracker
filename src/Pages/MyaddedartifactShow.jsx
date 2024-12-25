@@ -1,6 +1,6 @@
 import React from "react";
 
-function LikeArtifact({ alldata }) {
+function MyaddedartifactShow({ data ,onDeletehandel}) {
   const {
     Artifact_Name,
     Artifact_Image,
@@ -12,13 +12,21 @@ function LikeArtifact({ alldata }) {
     Present_Location,
     LikeCount,
     _id,
-  } = alldata;
+  } = data;
+
+
+
 
 
   return (
     <div>
-      <section className=" md:grid-col-3 grid-cols-1 mt-4 flex justify-center">
+      <section className="flex justify-center mt-4 m-4">
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800 border">
+            
+          <div className="flex space-x-4">
+          
+           
+          </div>
           <div>
             <img
               src={Artifact_Image}
@@ -36,10 +44,19 @@ function LikeArtifact({ alldata }) {
               <p>Present Location : {Present_Location}</p>
             </section>
           </div>
+          
+          <div className="flex justify-evenly">
+            <button className="px-8 py-2 border rounded-md hover:shadow-xl bg-green-500 text-white font-semibold">Update</button>
+            <button className="px-8 py-2  border rounded-md hover:shadow-xl text-red-500 bg-black font-semibold" onClick={()=>onDeletehandel(_id)}>Delete</button>
+          </div>
+                  
+        </div>
+        <div>
+            
         </div>
       </section>
     </div>
   );
 }
 
-export default LikeArtifact;
+export default MyaddedartifactShow;

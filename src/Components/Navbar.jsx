@@ -23,6 +23,7 @@ function Navbar() {
     signOut(Auth)
       .then((result) => {
         // setloading(false);
+        setloading(true);
         console.log("lo out");
         setuser(null);
         toast.success('Log out succesfully')
@@ -54,6 +55,7 @@ function Navbar() {
         </NavLink>
       </li>
       <li><NavLink to={'/mylikedartifact'}>mylikedartifact</NavLink></li>
+      <li><NavLink to={'/myadedaartifacts'}>my added artifacts</NavLink></li>
     </>
   );
 

@@ -30,8 +30,9 @@ function FeaturedPage() {
 
 
   return (
-    <div>
-      <h1>Most liked Artifacts</h1>
+    <div className='bg-blue-200 p-6'>
+      
+      <h1 className='text-2xl md:text-4xl font-bold text-center mt-4'>Most <span className='text-red-700'>Liked</span> Artifacts</h1>
 
       <div className='grid  md:grid-cols-3 justify-center items-center '>
       {

@@ -6,7 +6,7 @@ function FeaturedShowInfo({ data }) {
     data;
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-xl border mt-4">
+      <div className="card bg-base-100 w-96 hover:shadow-xl border mt-4">
 
         <figure className="px-10 pt-10">
           <img
