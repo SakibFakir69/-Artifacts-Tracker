@@ -62,7 +62,7 @@ const route = createBrowserRouter([
       {
         path: "/updatepage/:id",
         element: <UpdatePage/>,
-        loader : ({params})=> fetch(`https://server-o66mtchf3-sakibfakirs-projects.vercel.app/myaddedartifacts/${params.id}`)
+        loader : ({params})=> fetch(`https://server-sable-sigma-67.vercel.app/myaddedartifacts/${params.id}`)
         
       },
 
