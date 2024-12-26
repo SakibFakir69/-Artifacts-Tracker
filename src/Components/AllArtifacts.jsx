@@ -4,6 +4,7 @@ import { useScroll } from "motion/react";
 import AllShowArtifacts from "../Pages/AllShowArtifacts";
 import { data } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { Helmet } from "react-helmet";
 function AllArtifacts() {
   // fecth all aritact
 
@@ -15,7 +16,7 @@ function AllArtifacts() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allartifacts", { withCredentials: true })
+      .get("https://server-sable-sigma-67.vercel.app/allartifacts", { withCredentials: true })
       .then((response) => {
         console.log(response.data);
         setartifacts(response.data);
@@ -39,7 +40,7 @@ function AllArtifacts() {
 
     // api
 
-    axios.get(`http://localhost:5000/allartifacts/search?name=${input}`).then((res) => {
+    axios.get(`https://server-sable-sigma-67.vercel.app/allartifacts/search?name=${input}`).then((res) => {
       console.log(res.data);
       setserachData(res.data);
     });
@@ -57,6 +58,9 @@ function AllArtifacts() {
 
   return (
     <div className="px-4 bg-green-200 ">
+      <Helmet>
+        <title>All arifacts</title>
+      </Helmet>
       <div className="">
         <form class="max-w-md mx-auto" onSubmit={Finder}>
           <label

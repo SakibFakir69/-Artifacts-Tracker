@@ -3,6 +3,7 @@ import axios from "axios";
 import LikeArtifact from "../Pages/LikeArtifact";
 import useAuth from "../hooks/useAuth";
 import { use } from "react";
+import { Helmet } from "react-helmet";
 function MyLikedArtifact() {
   const [liked, setliked] = useState([]);
   const { user, loading } = useAuth();
@@ -11,7 +12,7 @@ function MyLikedArtifact() {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:5000/allartifacts`)
+        .get(`https://server-sable-sigma-67.vercel.app/allartifacts`)
 
         .then((res) => {
 
@@ -53,6 +54,9 @@ function MyLikedArtifact() {
       <h1 className="mt-6 md:text-4xl font-semibold text-2xl text-center">
         My Liked Artifacts
       </h1>
+      <Helmet>
+        <title>My liked arifacts</title>
+      </Helmet>
 
       <div className="grid md:grid-cols-3 grid-cols-1 m-2">
         {liked.map((item, key) => (

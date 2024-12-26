@@ -18,7 +18,7 @@ function MyArtifactsAdd() {
     const [ data ,setdata ] = useState([]);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/myaddedartifacts?email=${user?.email}`)
+        axios.get(`https://server-sable-sigma-67.vercel.app/myaddedartifacts?email=${user?.email}`)
         .then((res)=>{
             
             console.log(res.data)
@@ -47,7 +47,7 @@ function MyArtifactsAdd() {
               }).then((result) => {
                 if (result.isConfirmed) {
 
-                    axios.delete(`http://localhost:5000/myaddedartifacts/${id}`)
+                    axios.delete(`https://server-sable-sigma-67.vercel.app/myaddedartifacts/${id}`)
                     .then(()=>{
 
                         const filterdeleted = data.filter((item)=> item._id!==id);

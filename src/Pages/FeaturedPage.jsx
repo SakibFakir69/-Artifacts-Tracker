@@ -10,7 +10,7 @@ function FeaturedPage() {
   const [ data , setdata ] = useState([]);
 
   useEffect(()=>{
-    axios.get(`http://localhost:5000/higestLikeCount`)
+    axios.get(`https://server-sable-sigma-67.vercel.app/higestLikeCount`)
     .then((res)=>{
       setdata(res.data);
     })

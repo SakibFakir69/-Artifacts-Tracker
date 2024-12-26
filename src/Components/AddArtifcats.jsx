@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { toastConfig } from "react-simple-toasts";
 import { motion } from "motion/react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function AddArtifcats() {
   const { user,loading } = useAuth();
@@ -50,7 +51,7 @@ function AddArtifcats() {
    
 
     axios
-      .post("http://localhost:5000/addartifact",  artifactUserData )
+      .post("https://server-sable-sigma-67.vercel.app/addartifact",  artifactUserData )
       .then((data) => {
         if (data.status) {
           toast.success("Add artifact sucesfully");
@@ -71,6 +72,9 @@ function AddArtifcats() {
 
   return (
     <div className="">
+      <Helmet>
+        <title>Add artifact</title>
+      </Helmet>
       <section className="bg-gradient-to-br  from-green-100">
 
         {/* here  create post req and form */}

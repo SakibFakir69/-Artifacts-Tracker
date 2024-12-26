@@ -56,7 +56,7 @@ function ShowDetailsPage({ alldata }) {
     
 
 
-    axios.put(`http://localhost:5000/detailspage/like/${_id}`,{increment: counter,Email:user?.email})
+    axios.put(`https://server-sable-sigma-67.vercel.app/detailspage/like/${_id}`,{increment: counter,Email:user?.email})
     .then((response)=>{
         if(response.status===200)
 

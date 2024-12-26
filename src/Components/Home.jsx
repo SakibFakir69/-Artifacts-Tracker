@@ -6,9 +6,13 @@ import Banner from '../Pages/Banner'
 import ExtraPage1 from '../Pages/ExtraPage1'
 import ExtraPage2 from '../Pages/ExtraPage2'
 import FeaturedPage from '../Pages/FeaturedPage'
+import { Helmet } from 'react-helmet'
 function Home() {
   return (
     <div>
+      <Helmet>
+        <title>home</title>
+      </Helmet>
 
 
       <header><Banner/></header>
