@@ -218,7 +218,7 @@ function AddArtifcats() {
             </div>
 
             <div className="">
-              <button onClick={()=>nav('/allartifacts')}
+              <button 
                 type="submit"
                 className="px-6 py-2 border w-full  rounded-md bg-blue-700 text-white md:text-xl hover:opacity-75 hover:text-black duration-300 "
               >
