@@ -3,16 +3,19 @@ import axios from "axios";
 import { useScroll } from "motion/react";
 import AllShowArtifacts from "../Pages/AllShowArtifacts";
 import { data } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 function AllArtifacts() {
   // fecth all aritact
 
+  const {loading} = useAuth();
+
   const [artifacts, setartifacts] = useState([]);
-  const [ serachData , setserachData ] = useState([]);
-  const [ Errorx , setErrorx ] = useState(false);
+  const [serachData, setserachData] = useState([]);
+  const [Errorx, setErrorx] = useState(false);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allartifacts")
+      .get("http://localhost:5000/allartifacts", { withCredentials: true })
       .then((response) => {
         console.log(response.data);
         setartifacts(response.data);
@@ -28,45 +31,33 @@ function AllArtifacts() {
   // add pagination
   // seacrh
 
-  const [ input , setinput ] = useState("");
+  const [input, setinput] = useState("");
 
-  const Finder = (event)=>{
+  const Finder = (event) => {
     event.preventDefault();
-    console.log(input)
+    console.log(input);
 
-  
+    // api
 
-    // const SearchData = artifacts.filter((item)=>item.Artifact_Name.toLowerCase().includes(input.toLowerCase())
-    // )
-  
-    const filtered = artifacts.filter(
-      (item) =>
-        item.Artifact_Name &&
-        item.Artifact_Name.toLowerCase().includes(input.trim().toLowerCase())
-    );
-    
-    if(filtered.length===0)
-    {
-      setErrorx(true)
-      console.log(true)
-    }else{
-      setErrorx(false)
-    }
-    console.log(filtered,"data");
-    setserachData(filtered)
+    axios.get(`http://localhost:5000/allartifacts/search?name=${input}`).then((res) => {
+      console.log(res.data);
+      setserachData(res.data);
+    });
+  };
+  console.log(serachData, "tesrt");
 
-    
-   
+  if(serachData.length==0)
+  {
+    return <div className="flex justify-center mt-6">
+    <span className="loading loading-bars loading-md flex justify-center items-center text-red-500 text-center"></span>
+</div>
 
   }
-  console.log(artifacts ,"tesrt")
   
-
 
   return (
     <div className="px-4">
       <div className="mt-6">
-
         <form class="max-w-md mx-auto" onSubmit={Finder}>
           <label
             for="default-search"
@@ -93,7 +84,7 @@ function AllArtifacts() {
               </svg>
             </div>
             <input
-            onChange={(e)=> setinput(e.target.value)}
+              onChange={(e) => setinput(e.target.value)}
               type="search"
               id="default-search"
               class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -115,13 +106,9 @@ function AllArtifacts() {
       </h1>
 
       <section>
+        <div>{Errorx && <p>No Data Founded</p>}</div>
 
-        <div>
-          {Errorx && <p>No Data Founded</p>}
-        </div>
-        
-
-        <div className="grid md:grid-cols-4 gap-4 grid-cols-2 ">
+        <div className="grid md:grid-cols-4 gap-4 grid-cols-2 m-2  ">
           {serachData.map((item, key) => (
             <AllShowArtifacts data={item} key={key} />
           ))}

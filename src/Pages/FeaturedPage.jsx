@@ -25,6 +25,13 @@ function FeaturedPage() {
   // // Short description
   // // Like Count
   // // View Details button
+
+  if(data.length===0)
+  {
+    return <div className="flex justify-center mt-6">
+    <span className="loading loading-bars loading-md flex justify-center items-center text-red-500 text-center"></span>
+</div>
+  }
   
 
 

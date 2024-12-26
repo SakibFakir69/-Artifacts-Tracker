@@ -18,6 +18,7 @@ function SignIn() {
     const data = Object.fromEntries(formData);
     const { email, password } = data;
     setloading(true);
+    
     LoginUser(email, password)
       .then((result) => {
         setloading(false);

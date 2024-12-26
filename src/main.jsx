@@ -57,7 +57,7 @@ const route = createBrowserRouter([
       // my added artifacts 
       {
         path : "/myadedaartifacts",
-        element : <MyArtifactsAdd/>
+        element : <PrivateRoute><MyArtifactsAdd/></PrivateRoute>
       },
       {
         path: "/updatepage/:id",

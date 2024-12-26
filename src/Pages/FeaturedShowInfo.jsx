@@ -24,6 +24,7 @@ function FeaturedShowInfo({ data }) {
           <div className="card-actions">
 
             <NavLink   to={`/detailspage/${_id}`} className="btn btn-primary">View Detils</NavLink>
+            <NavLink to={'/allartifacts'} className="btn btn-primary">See all</NavLink>
 
           </div>
 

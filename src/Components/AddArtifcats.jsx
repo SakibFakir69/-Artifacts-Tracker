@@ -10,9 +10,9 @@ import { toastConfig } from "react-simple-toasts";
 import { motion } from "motion/react";
 
 function AddArtifcats() {
-  const { user } = useAuth();
+  const { user,loading } = useAuth();
 
-  const Email = user?.email;
+  const email = user?.email;
 
   const handeladdArtifactsFormData = (event) => {
     event.preventDefault();
@@ -29,17 +29,22 @@ function AddArtifcats() {
       Discovered_At,
       Discovered_By,
       Present_Location,
-      LikeCount,
-      Email,
+      // LikeCount,
+      
+
+      
       
     } = info;
+    
 
     console.log(Artifact_Type,create_At);
 
     const artifactUserData = {
       ...info,
-      LikeCount: 0, 
+      LikeCount: 0, email,
+      // LikeBy:[]
     };
+   
 
     axios
       .post("http://localhost:5000/addartifact",  artifactUserData )
@@ -54,6 +59,11 @@ function AddArtifcats() {
 
     // start post opration
     console.log(artifactUserData);
+
+    if(loading)
+    {
+      return <p>loading ...</p>
+    }
   };
 
   return (

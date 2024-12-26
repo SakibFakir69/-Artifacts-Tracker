@@ -1,29 +1,31 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Auth from "../Firebase/ConfigF";
 import { signOut } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from "motion/react";
-import { easeIn } from "motion";
- 
+
 
 function Navbar() {
   const { user, setloading, setuser,photo } = useAuth();
   console.log(user);
 
+  console.log(photo,"sdf")
+
   // log out
 
   const logout = () => {
 
-    setloading(false);
+    setloading(true);
     
 
     signOut(Auth)
       .then((result) => {
         // setloading(false);
-        setloading(true);
+        setloading(false);
+        
         console.log("lo out");
         setuser(null);
         toast.success('Log out succesfully')
@@ -32,6 +34,12 @@ function Navbar() {
         console.log("this error comes form ", error.code);
       });
   };
+  console.log(photo ,"navbar");
+  const navgate = useNavigate();
+  const handelChnage = (event)=>{
+    const selectedValue = event.target.value;
+    navgate(selectedValue);
+  }
 
   const links = (
     <>
@@ -44,18 +52,17 @@ function Navbar() {
       <li>
         <NavLink to={"/addartifacts"}>Add Artifacts</NavLink>
       </li>
-
       <li>
-        <NavLink>
-          Myprofile
-          <select value="myProfile">
-            <option>My Artifacts</option>
-            <option>Liked Artifacts</option>
-          </select>
-        </NavLink>
+        
+
+        
+          
+      
       </li>
-      <li><NavLink to={'/mylikedartifact'}>mylikedartifact</NavLink></li>
-      <li><NavLink to={'/myadedaartifacts'}>my added artifacts</NavLink></li>
+
+   
+  
+      
     </>
   );
 
@@ -86,10 +93,16 @@ function Navbar() {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
+              <select onChange={handelChnage} className="border p-1 rounded-md">
+                <option value={""}>Select</option>
+                <option value="mylikedartifact">My Liked</option>
+                <option value="/myadedaartifacts">My Added artifacts</option>
+
+              </select>
             </ul>
           </div>
           <motion.a whileHover={{scale:1.1 , opacity:0.9}} 
-          className="btn-ghost md:text-2xl">Historical Artifacts Tracker</motion.a>
+          className="btn-ghost md:text-2xl">Historical Artifacts <span className="text-green-400 font-semibold">Tracker</span></motion.a>
           
 
         </div>
@@ -99,8 +112,9 @@ function Navbar() {
 
         <div className="navbar-end flex gap-4 ">
 
-          <div className="size-10">
-            <img src={user?.photoURL || photo} alt="!" />
+          <div className="size-10 border rounded-full">
+            <img src={photo || user?.photoURL
+}  />
           </div>
 
           {user ? (
@@ -110,6 +124,15 @@ function Navbar() {
                   Log out 
                 </span>
               </button>
+
+              <select onChange={handelChnage} className="border-2 p-1 rounded-md  md:w-32 md:h-10">
+
+                <option value={""}>My Profile</option>
+                <option value="mylikedartifact">My Liked</option>
+                <option value="/myadedaartifacts">My Added artifacts</option>
+
+              </select>
+              
             </div>
           ) : (
             <div>

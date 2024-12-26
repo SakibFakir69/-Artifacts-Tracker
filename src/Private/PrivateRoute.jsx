@@ -9,6 +9,7 @@ import { Navigate } from 'react-router-dom';
 function PrivateRoute({children}) {
 
     const {user,loading}= useAuth();
+    
     console.log(loading,"form private route");
 
 

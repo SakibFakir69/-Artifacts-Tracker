@@ -26,7 +26,7 @@ function AllShowArtifacts({ data }) {
           <div>Loading...</div>
         ) : (
           <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-4 hover:shadow-xl hover:border duration-150">
               <img
                 src={Artifact_Image}
                 alt=""

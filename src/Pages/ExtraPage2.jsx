@@ -30,6 +30,7 @@ function ExtraPage2() {
 
       <section className="grid md:grid-cols-4 items-center justify-center gap-4">
 
+
         <motion.div  className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md ">
 
           <img src="/KingTutankhamunsMaskegpt.jpg" alt="egpt" />
@@ -47,11 +48,12 @@ function ExtraPage2() {
           </p>
          </div>
 
+
         </motion.div>
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
           
-          <img src="/TheCrownJewelsoftheUnitedKingdomuk.jpg" alt="england" />
+          <img src="/TheCrownJewelsoftheUnitedKingdomuk.jpg" alt="england" className="w-full object-cover" />
 
          <div className="ml-2">
          <p>
@@ -64,11 +66,14 @@ function ExtraPage2() {
           <span className="text-orange-500 md:text-xl">Time </span> <i class="ri-calendar-schedule-line"></i> : <span>Varies (12th century)</span>
           </p>
          </div>
+         <div className="mb-16 invisible">
+          df
+         </div>
 
         </div>
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheDeadSeaScrollspleastine.jpg" alt="pleastine" />
-          <div className="ml-2">
+          <img src="/TheDeadSeaScrollspleastine.jpg" alt="pleastine"  className="w-full object-cover"/>
+          <div className="ml-2 mt-4">
           <p>
             {" "}
             <span className="text-green-500 md:text-xl">Name</span>: <span>The DeadScrolls</span>
@@ -80,10 +85,14 @@ function ExtraPage2() {
           <span className="text-orange-500 md:text-xl">Time </span>  <i class="ri-calendar-schedule-line"></i> : <span>2nd century BCE</span>
           </p>
           </div>
+          <div className="mb-16 invisible">
+            dsf
+          </div>
 
         </div>
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheMagnaCartaengland.jpg" alt="egpt" />
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md ">
+
+          <img src="/TheMagnaCartaengland.jpg" alt="egpt" className="w-full object-cover" />
 
          <div className="ml-2">
          <p>
@@ -102,9 +111,9 @@ function ExtraPage2() {
         <div
         className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
 
-          <img src="/TheTerracottaArmychina.jpg" alt="egpt" />
+          <img src="/TheTerracottaArmychina.jpg" alt="egpt" className="w-full object-cover"/>
 
-          <div className="ml-2">
+          <div className="ml-2 mt-6">
           <p>
             {" "}
             <span className="text-green-500 md:text-xl">Name</span>: <span>The Terracotta Army </span>
@@ -116,11 +125,20 @@ function ExtraPage2() {
           <span className="text-orange-500 md:text-xl">Time </span><i class="ri-calendar-schedule-line"></i> : <span>210 BC</span>
           </p>
           </div>
+          <div className="mt-4">
+
+          </div>
+          <div className="mb-8 invisible">
+            asd
+            
+            
+
+          </div>
         </div>
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheElginMarblesgreec.jpg" />
-          <div className="ml-2">
+          <img src="/TheElginMarblesgreec.jpg" className="w-full object-cove" />
+          <div className="ml-2 mt-6">
           <p>
             {" "}
             <span className="text-green-500 md:text-xl">Name</span>:<span>The Elgin Marbles </span>
@@ -132,10 +150,13 @@ function ExtraPage2() {
           <span className="text-orange-500 md:text-xl">Time </span>  <i class="ri-calendar-schedule-line"></i> : <span>447 BC</span>
           </p>
           </div>
+          <div className="mb-20"></div>
+
         </div>
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheRosettaStone.jpg" />
+          <img src="/TheRosettaStone.jpg" className="w-full object-cover" />
+
          <div className="ml-2">
          <p>
             {" "}
@@ -151,7 +172,7 @@ function ExtraPage2() {
         </div>
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheMonaLisaitlaiy.jpg" />
+          <img src="/TheMonaLisaitlaiy.jpg" className="w-full object-cover" />
           <div className="ml-2">
           <p>
             {" "}

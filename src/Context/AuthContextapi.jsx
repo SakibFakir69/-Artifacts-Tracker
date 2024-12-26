@@ -8,18 +8,19 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
-
+import axios from "axios";
 export const MyContext = createContext();
 
 function AuthContextapi({ children }) {
   const [user, setuser] = useState(null);
   const [loading, setloading] = useState(true);
-  const [ photo , setphoto ] = useState(null);
-  console.log(photo);
-  console.log("hello form authContex");
+
+  const [ photo , setphoto ] = useState([]);
+  
 
 
   const [ likedpost , setlikedpost ] = useState([]);
+  console.log(photo);
 
   // create User
   // reg
@@ -52,8 +53,8 @@ function AuthContextapi({ children }) {
     setuser,
     loading,
     setloading,
-    CreateUser,
-    CreateUserWithGoogle,LoginUser,GoogleLoginIn,setlikedpost
+    CreateUser,setphoto,
+    CreateUserWithGoogle,LoginUser,GoogleLoginIn,setlikedpost,photo
   };
 
   // onchanged
@@ -62,15 +63,31 @@ function AuthContextapi({ children }) {
 
   useEffect(() => {
 
-    const unSubcribe = onAuthStateChanged(Auth, (CurrentUser) => {
-      if (CurrentUser) {
-        setloading(true);
-        setuser(CurrentUser);
-      }
+    const unSubcribe = onAuthStateChanged(Auth, (currentUser) => {
+      console.log(currentUser,"sadf");
+      setuser(currentUser);
+
+      const user = currentUser?.email;
+      console.log(user);
+
+      
+      if(currentUser?.email)
+        {
+          console.log("got email");
+          const user = {email: currentUser?.email};
+
+          axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
+          .then((res)=>{setloading(false), console.log(res.data ,"log in")});
+
+        }else{
+          axios.post('http://localhost:5000/signout',user, {withCredentials:true})
+          .then(res =>{setloading(false), console.log(res.data,"log out")})
+        }
+        
       setloading(false);
     });
 
-    return unSubcribe();
+    return ()=>  unSubcribe();
   }, []);
 
   return (

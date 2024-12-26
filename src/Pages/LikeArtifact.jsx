@@ -17,7 +17,7 @@ function LikeArtifact({ alldata }) {
 
   return (
     <div>
-      <section className=" md:grid-col-3 grid-cols-1 mt-4 flex justify-center">
+      <section className=" md:grid-col-3 grid-cols-1 mt-4 flex justify-center m-4">
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800 border">
           <div>
             <img

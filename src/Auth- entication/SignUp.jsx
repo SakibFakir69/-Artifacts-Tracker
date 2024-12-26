@@ -42,11 +42,16 @@ function SignUp() {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+    setphoto(data.
+      photoUrl);
+      
     const { email, password ,
-      confirmPassword
+      confirmPassword,
+      photoUrl
       } = data;
     console.log(data);
     setloading(true);
+   
 
     // if (password !== data.confirm - password) {
     //   return "password not same";
@@ -60,21 +65,21 @@ function SignUp() {
       setError(passTest);
       return;
     }
-    if(password!==confirmPassword)
-    {
-      setError("password are not same");
-      return;
-    }
-    if(photoURL==="")
-    {
-      setError('Fil photoURL filed');
-      return;
-    }
+    // if(password!==confirmPassword)
+    // {
+    //   setError("password are not same");
+    //   return;
+    // }
+    // if(photoURL==="")
+    // {
+    //   setError('Fil photoURL filed');
+    //   return;
+    // }
 
 
     CreateUser(email, password)
       .then((Result) => {
-        setloading(false);
+        
         const users = Result.user;
         setuser(users);
         setloading(false);
@@ -95,6 +100,7 @@ function SignUp() {
     CreateUserWithGoogle()
       .then((result) => {
         goTohome("/");
+
         setloading(false);
         const users = result.user;
         setuser(users);

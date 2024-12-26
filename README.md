@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Include a README file with the project name, purpose, live URL, key features, and any npm packages you have used.
+
+project_Name : Historical Artifacts Tracker
+Live_url : 
+
+key feature : 
+  1.easy to use 
+  2. you can update and delete
+  3.you can like you favrite post
+
+Npm_pacakge: 
+  1.react toastify
+  2.React router dom
+  3.sweralert2
+  4.typewriter

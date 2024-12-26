@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import axios from "axios";
 import { increment } from "firebase/firestore/lite";
+
 function ShowDetailsPage({ alldata }) {
   // add like button and count like
   // click like button incarase by one
+
+
 
   const {setlikedpost} = useAuth();
   let {
@@ -16,7 +19,7 @@ function ShowDetailsPage({ alldata }) {
     Discovered_At,
     Discovered_By,
     Present_Location,
-    LikeCount,_id
+    LikeCount,_id,LikeBy,
   } = alldata;
 
   const {user} = useAuth();
@@ -24,6 +27,7 @@ function ShowDetailsPage({ alldata }) {
   const [ like , setlike ] = useState(false);
 
   const [likecount , setlikecount ] = useState(LikeCount);
+ 
 
   
 
@@ -42,13 +46,23 @@ function ShowDetailsPage({ alldata }) {
     }
     setlike((prev)=>!prev)
 
-    axios.put(`http://localhost:5000/detailspage/like/${_id}`,{increment: counter})
+    // 
+    // axios.post('/myadedlikapi',LikeBy)
+
+    const Account = user?.email;
+    console.log(LikeBy)
+   
+    
+    
+
+
+    axios.put(`http://localhost:5000/detailspage/like/${_id}`,{increment: counter,Email:user?.email})
     .then((response)=>{
         if(response.status===200)
 
         {
           setlikecount((prev)=> prev+counter);
-            alert("liked")
+            
             
 
         }

@@ -9,7 +9,11 @@ import MyaddedartifactShow from '../Pages/MyaddedartifactShow';
 import Swal from 'sweetalert2';
 
 function MyArtifactsAdd() {
-    const {user} = useAuth();
+    const {user,loading} = useAuth();
+    if(loading)
+    {
+        return <p>Loading...</p>
+    }
 
     const [ data ,setdata ] = useState([]);
 
@@ -62,10 +66,17 @@ function MyArtifactsAdd() {
 
     }
 
+    if(data.length==0)
+    {
+          return <div className="flex justify-center mt-6">
+            <p>No data founded</p>
+        </div>
+    }
+
 
   return (
     <div>
-        <h1>My added artifacts length is : {data.length}</h1>
+        <h1 className='text-2xl md:text-4xl text-center font-semibold mt-2'>My added artifacts length is : {data.length}</h1>
 
         <div className='grid md:grid-cols-3 grid-cols-1 gap-4 p-4'>
             {

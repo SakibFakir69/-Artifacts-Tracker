@@ -35,7 +35,7 @@ function UpdatePage() {
     const formData = new FormData(event.target);
     const info = Object.fromEntries(formData);
 
-    fetch(`http://localhost:5000/allartifacts/${id}`, 
+    fetch(`http://localhost:5173/allartifacts/${id}`, 
       {
         method :'PUT',
         headers:{
