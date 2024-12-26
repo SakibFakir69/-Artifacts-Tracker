@@ -8,11 +8,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { toastConfig } from "react-simple-toasts";
 import { motion } from "motion/react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function AddArtifcats() {
   const { user,loading } = useAuth();
 
   const email = user?.email;
+  const nav = useNavigate();
+  
 
   const handeladdArtifactsFormData = (event) => {
     event.preventDefault();
@@ -211,7 +214,7 @@ function AddArtifcats() {
             </div>
 
             <div className="">
-              <button
+              <button onClick={()=>nav('/allartifacts')}
                 type="submit"
                 className="px-6 py-2 border w-full  rounded-md bg-blue-700 text-white md:text-xl hover:opacity-75 hover:text-black duration-300 "
               >

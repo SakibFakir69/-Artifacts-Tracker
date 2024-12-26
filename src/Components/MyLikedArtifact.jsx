@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import LikeArtifact from "../Pages/LikeArtifact";
 import useAuth from "../hooks/useAuth";
+import { use } from "react";
 function MyLikedArtifact() {
   const [liked, setliked] = useState([]);
   const { user, loading } = useAuth();
-  console.log(user);
+  
 
   useEffect(() => {
     if (user?.email) {
@@ -13,10 +14,17 @@ function MyLikedArtifact() {
         .get(`http://localhost:5000/allartifacts`)
 
         .then((res) => {
-            
-          const userLikeData = res.data.filter((item)=>item.LikeBy);
 
-          console.log(userLikeData);
+            console.log(res.data)
+            
+          const userLikeData = res.data.filter((item)=>item?.LikedBy?.includes(user.email));
+
+          console.log(userLikeData ,"user")
+
+     
+          
+
+    
 
           
           setliked(userLikeData)
