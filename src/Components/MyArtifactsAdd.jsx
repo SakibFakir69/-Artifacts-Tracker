@@ -75,8 +75,8 @@ function MyArtifactsAdd() {
 
 
   return (
-    <div>
-        <h1 className='text-2xl md:text-4xl text-center font-semibold mt-2'>My added artifacts length is : {data.length}</h1>
+    <div className='bg-red-200'>
+        
 
         <div className='grid md:grid-cols-3 grid-cols-1 gap-4 p-4'>
             {

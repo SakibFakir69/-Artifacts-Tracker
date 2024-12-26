@@ -56,12 +56,12 @@ function AllArtifacts() {
   
 
   return (
-    <div className="px-4">
-      <div className="mt-6">
+    <div className="px-4 bg-green-200 ">
+      <div className="">
         <form class="max-w-md mx-auto" onSubmit={Finder}>
           <label
             for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white "
           >
             Search
           </label>

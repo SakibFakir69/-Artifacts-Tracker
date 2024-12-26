@@ -15,7 +15,7 @@ function AddArtifcats() {
 
   const email = user?.email;
   const nav = useNavigate();
-  
+
 
   const handeladdArtifactsFormData = (event) => {
     event.preventDefault();

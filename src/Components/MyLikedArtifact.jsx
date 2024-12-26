@@ -49,7 +49,7 @@ function MyLikedArtifact() {
   }
 
   return (
-    <div className="px-4">
+    <div className="px-4 bg-gray-300 -mt-6">
       <h1 className="mt-6 md:text-4xl font-semibold text-2xl text-center">
         My Liked Artifacts
       </h1>
