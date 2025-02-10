@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLoaderData, useParams } from "react-router-dom";
 import Updated from "../Pages/Updated";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function UpdatePage() {
 
@@ -20,6 +22,7 @@ function UpdatePage() {
     Present_Location,
     LikeCount,
     Email,
+    _id
     
   } = data;
 
@@ -32,10 +35,11 @@ function UpdatePage() {
 
   const UpdateButtonhandel = (event) => {
     event.preventDefault();
+
     const formData = new FormData(event.target);
     const info = Object.fromEntries(formData);
 
-    fetch(`http://localhost:5173/allartifacts/${id}`, 
+    fetch(`https://server-sable-sigma-67.vercel.app/allartifacts/${_id}`, 
       {
         method :'PUT',
         headers:{
@@ -47,6 +51,7 @@ function UpdatePage() {
     )
     .then((res)=>{
       console.log("ok");
+      toast.success("done")
     })
     .catch((error)=>{
       console.log(error.code)

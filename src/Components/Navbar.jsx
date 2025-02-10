@@ -125,10 +125,10 @@ function Navbar() {
                 </span>
               </button>
 
-              <select onChange={handelChnage} className="border-2 p-1 rounded-md  md:w-32 md:h-10">
+              <select onChange={handelChnage} className="border-2 p-1 rounded-md  md:w-32 md:h-10 ">
 
                 <option value={""}>My Profile</option>
-                <option value="mylikedartifact">My Liked</option>
+                <option value="/mylikedartifact">My Liked</option>
                 <option value="/myadedaartifacts">My Added artifacts</option>
 
               </select>

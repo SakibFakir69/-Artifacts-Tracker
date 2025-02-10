@@ -76,7 +76,7 @@ const route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://server-sable-sigma-67.vercel.app/.app/detailspage/${params.id}`),
+          fetch(`https://server-sable-sigma-67.vercel.app/detailspage/${params.id}`),
       },
       // my liked artifact
      

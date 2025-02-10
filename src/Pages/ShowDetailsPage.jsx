@@ -50,7 +50,7 @@ function ShowDetailsPage({ alldata }) {
     // axios.post('/myadedlikapi',LikeBy)
 
     const Account = user?.email;
-    console.log(LikeBy)
+    
    
     
     
@@ -73,6 +73,7 @@ function ShowDetailsPage({ alldata }) {
     
 
   }
+ 
 
 
   return (
@@ -121,7 +122,7 @@ function ShowDetailsPage({ alldata }) {
           </div>
           <div className="flex flex-wrap  justify-center">
             
-          <i  onClick={handleLike} className={`${like ? 'text-blue-400 ri-thumb-up-line text-2xl md:text-3xl' : 'ri-thumb-up-line text-2xl md:text-3xl'}`}></i>{likecount}
+          <i  onClick={handleLike} className={`${like ? 'text-blue-400 ri-thumb-up-line text-2xl md:text-3xl' : 'ri-thumb-up-line text-2xl md:text-3xl'}`}></i> {likecount}
 
         
           
