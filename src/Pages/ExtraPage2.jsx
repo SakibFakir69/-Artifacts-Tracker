@@ -30,160 +30,177 @@ function ExtraPage2() {
 
       <section className="grid md:grid-cols-4 items-center justify-center gap-4">
 
-        <motion.div className="shadow-md hover:shadow-xl border border-gray-200 bg-white  flex justify-center flex-col w-56 p-2 rounded-md ">
-          
+        <motion.div className="shadow-md hover:shadow-xl border border-gray-200 bg-white  flex justify-center flex-col w-56  rounded-md p-4 hover:shadow-black
+        
+        ">
 
-          <img src="/KingTutankhamunsMaskegpt.jpg" alt="egpt" />
 
-          <div className="ml-2">
+          <img src="/KingTutankhamunsMaskegpt.jpg" alt="egpt" className="w-full h-48 rounded" />
+
+          <div className="ml-2 mt-2">
             <p>
               <span className="text-black font-semibold">
                 King Tutankhamun's Mask
               </span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-flag-line"></i> <span> Egpt</span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i>{" "}
               <span>Around 2500 BC</span>
             </p>
           </div>
         </motion.div>
+        {/* done */}
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col  w-56 rounded-md p-4 bg-white hover:shadow-black">
+
           <img
             src="/TheCrownJewelsoftheUnitedKingdomuk.jpg"
             alt="england"
-            className="w-full object-cover"
+            className="w-full object-cover h-48 rounded"
           />
 
-          <div className="ml-2">
-            <p>
-              <span>he Crown Jewels of the United Kingdom</span>
+          <div className="ml-2 mt-2">
+            <p className=" font-semibold">
+              <span> Crown Jewels of the United Kingdom</span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-flag-line"></i> <span>England</span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-calendar-schedule-line"></i>{" "}
               <span>Varies (12th century)</span>
             </p>
           </div>
-          <div className="mb-16 invisible">df</div>
+
+          {/* done */}
+
+         
         </div>
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
+
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 bg-white  rounded-md hover:shadow-black">
           <img
             src="/TheDeadSeaScrollspleastine.jpg"
             alt="pleastine"
-            className="w-full object-cover"
+            className="w-full object-cover rounded h-48"
           />
-          <div className="ml-2 mt-4">
-            <p>
+          <div className="ml-2 mt-2">
+            <p className="text-black font-semibold">
               {" "}
               <span>The DeadScrolls</span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-flag-line"></i> <span>Pleastine</span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i>{" "}
               <span>2nd century BCE</span>
             </p>
+            <div className="invisible">d</div>
           </div>
-          <div className="mb-16 invisible"></div>
+         
         </div>
+        {/* done */}
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md ">
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md  bg-white hover:shadow-black">
+
           <img
             src="/TheMagnaCartaengland.jpg"
             alt="egpt"
-            className="w-full object-cover"
+            className="w-full object-cover h-48 rounded"
           />
 
-          <div className="ml-2">
-            <p>
+          <div className="ml-2 mt-2">
+            <p className="text-black font-semibold">
               {" "}
               <span>The Magna Carta </span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-flag-line"></i> <span>Grece</span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i> : <span>1215 AD</span>
             </p>
           </div>
         </div>
+        {/* done */}
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
+
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md bg-white hover:shadow-black">
           <img
             src="/TheTerracottaArmychina.jpg"
             alt="egpt"
-            className="w-full object-cover"
+            className="w-full object-cover h-48 rounded"
           />
 
           <div className="ml-2 mt-6">
-            <p>
+            <p className="text-black font-semibold">
               {" "}
               <span>The Terracotta Army </span>
             </p>
-            <p>
-              <span className="text-red-500">Country :</span>{" "}
+            <p className="text-stone-500">
+              {" "}
               <i class="ri-flag-line"></i> <span>Egpt</span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-calendar-schedule-line"></i> : <span>210 BC</span>
             </p>
           </div>
-          <div className="mt-4"></div>
-          <div className="mb-8 invisible">asd</div>
+      
+          
         </div>
+        {/* done */}
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheElginMarblesgreec.jpg" className="w-full object-cove" />
-          <div className="ml-2 mt-6">
-            <p>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md bg-white hover:shadow-black">
+          <img src="/TheElginMarblesgreec.jpg" className="w-full object-cover h-48 rounded" />
+
+          <div className="ml-2 mt-2">
+            <p className="text-black font-semibold">
               {" "}
               <span>The Elgin Marbles </span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-flag-line"></i> <span>Grece</span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i> : <span>447 BC</span>
             </p>
           </div>
-          <div className="mb-20"></div>
+         
         </div>
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheRosettaStone.jpg" className="w-full object-cover" />
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md bg-white hover:shadow-black">
+          <img src="/TheRosettaStone.jpg" className="w-full object-cover h-48 rounded" />
 
-          <div className="ml-2">
-            <p>
+          <div className="ml-2 mt-2">
+            <p className="text-black font-semibold">
               {" "}
               <span>The Rosetta Stone </span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-flag-line"></i> <span>Egpt</span>
             </p>
-            <p>
+            <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i> : <span>196 BC</span>
             </p>
           </div>
         </div>
+        {/* done */}
 
-        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-2 rounded-md">
-          <img src="/TheMonaLisaitlaiy.jpg" className="w-full object-cover" />
-          <div className="ml-2">
-            <p>
+        <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md bg-white hover:shadow-black">
+
+          <img src="/TheMonaLisaitlaiy.jpg" className="w-full object-cover rounded h-48" />
+          <div className="ml-2 mt-4">
+            <p className="text-black font-semibold">
               {" "}
               <span>The Rosetta Stone </span>
             </p>
-            <p>
+            <p className="text-slate-400">
               <i class="ri-flag-line"></i> <span>Italy</span>
             </p>
-            <p>
+            <p className="text-stone-500">
               <i class="ri-calendar-schedule-line"></i>: <span>1503 AD</span>
             </p>
           </div>
