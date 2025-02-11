@@ -71,11 +71,12 @@ function AddArtifcats() {
   };
 
   return (
-    <div className="py-16">
+    <div className="py-16 h-screen">
 
       <Helmet>
         <title>Add artifact</title>
       </Helmet>
+
       <section className="bg-gradient-to-br  from-green-100">
 
         {/* here  create post req and form */}
@@ -83,18 +84,18 @@ function AddArtifcats() {
           <h1 className="invisible">asd</h1>
         </div>
 
-        <div>
+        {/* <div>
           <h1 className="text-center lg:text-5xl font-semibold md:text-4xl text-2xl mt-4">
             Add Your Artifacts
           </h1>
-        </div>
+        </div> */}
 
         <ToastContainer />
 
-        <section className=" ">
+        <section className="w-full ">
 
           <form
-            class="max-w-md mx-auto  p-4 rounded-md shadow-xl border flex flex-col gap-4 mt-6 "
+            class="mx-auto  p-4 rounded-md shadow-xl border flex flex-col gap-4 mt-6  w-10/12 p-6"
             onSubmit={handeladdArtifactsFormData}
           >
             <div class="relative z-0 w-full  group ">

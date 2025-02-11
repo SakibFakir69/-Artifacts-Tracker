@@ -52,7 +52,7 @@ function ExtraPage2() {
             </p>
           </div>
         </motion.div>
-        {/* done */}
+        {/* done  1 */}
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col  w-56 rounded-md p-4 bg-white hover:shadow-black">
 
@@ -75,7 +75,7 @@ function ExtraPage2() {
             </p>
           </div>
 
-          {/* done */}
+          {/* done  2 */}
 
          
         </div>
@@ -102,7 +102,7 @@ function ExtraPage2() {
           </div>
          
         </div>
-        {/* done */}
+        {/* done 3  */}
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md  bg-white hover:shadow-black">
 
@@ -123,9 +123,12 @@ function ExtraPage2() {
             <p className="text-slate-500">
               <i class="ri-calendar-schedule-line"></i> : <span>1215 AD</span>
             </p>
+            <div className="invisible">
+              s
+            </div>
           </div>
         </div>
-        {/* done */}
+        {/* done  4 */}
 
 
         <div className="shadow-md hover:shadow-xl border border-gray-200  flex justify-center flex-col w-56 p-4 rounded-md bg-white hover:shadow-black">

@@ -27,13 +27,14 @@ function LikeArtifact({ alldata }) {
             />
 
             <section className="border grid grid-cols-2 gap-2 p-2">
-              <p>Artifact Name : {Artifact_Name}</p>
-              <p>Artifact Type : {Artifact_Type || "not founded"}</p>
-              <p>Create At : {create_At || "not founded"}</p>
+              <p className="text-xl font-semibold"> {Artifact_Name}</p>
 
-              <p>Descovered At : {Discovered_At || "not founded"}</p>
-              <p>discovered by : {Discovered_By || "not founded"}</p>
-              <p>Present Location : {Present_Location}</p>
+              <p className="text-stone-600">{Artifact_Type || "not founded"}</p>
+              <p className="text-stone-600"> {create_At || "not founded"}</p>
+
+              <p className="text-stone-600"> {Discovered_At || "not founded"}</p>
+              <p className="text-stone-600">{Discovered_By || "not founded"}</p>
+              <p className="text-stone-600"> {Present_Location}</p>
             </section>
           </div>
         </div>

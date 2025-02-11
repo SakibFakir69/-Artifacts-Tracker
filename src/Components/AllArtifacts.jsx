@@ -111,7 +111,7 @@ function AllArtifacts() {
       </Helmet>
 
       {isloading ? (
-        <div className="w-full  border flex ">
+        <div className="w-full   flex ">
           <span className="loading loading-bars  flex w-20 h-20 mx-auto justify-center items-center py-40"></span>
         </div>
       ) : (
@@ -124,7 +124,7 @@ function AllArtifacts() {
 
           <h1 className="text-center md:text-4xl text-xl mt-4 rounded-md h-10"></h1>
 
-          <div className="-4  mb-10 border">
+          <div className="-4  mb-10 ">
             <form class="max-w-md mx-auto ">
               <label
                 for="default-search"
@@ -162,10 +162,10 @@ function AllArtifacts() {
             </form>
           </div>
 
-          <div>
+          <div className="flex justify-end mr-2 items-center">
             <span>Sort by:</span>
 
-            <select  className="relative z-10 ml-2" onChange={(e)=>{
+            <select  className="relative z-10 ml-2  p-2 rounded" onChange={(e)=>{
 
               if(e.target.value==='ascending'){ asyndingOrderSearch() }
 
@@ -185,7 +185,7 @@ function AllArtifacts() {
             </select>
           </div>
 
-          <section className="border">
+          <section className="">
             <div className="grid md:grid-cols-4 gap-4 grid-cols-1 m-2  ">
               {serachData.map((item, key) => (
                 <AllShowArtifacts data={item} key={key} />

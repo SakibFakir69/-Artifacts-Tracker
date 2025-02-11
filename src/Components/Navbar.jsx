@@ -6,6 +6,7 @@ import { signOut } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { motion } from "motion/react";
+import { TbMapPin2 } from "react-icons/tb";
 
 function Navbar() {
   const { user, setloading, setuser, photo } = useAuth();
@@ -65,11 +66,12 @@ function Navbar() {
   return (
     <div className="">
 
-      <div className="navbar text-black shadow-xl  border-2 border-red-300
+      <div className="navbar text-black shadow-xl 
 
       fixed
       backdrop-blur-md
-      bg-teal-200/30
+      bg-stone-100 bg-transparent
+  
       z-50
       ">
 
@@ -106,13 +108,15 @@ function Navbar() {
               </select>
             </ul>
           </div>
-          <motion.a
-            whileHover={{ scale: 1.1, opacity: 0.9 }}
-            className="btn-ghost md:text-2xl"
+          <Link
+          to={'/'}
+          className="flex gap-3 justify-center items-center"
+          
+           
           >
-            Historical Artifacts{" "}
-            <span className="text-green-400 font-semibold">Tracker</span>
-          </motion.a>
+            <span className="text-xl text-red-600 font-semibold ">Artifacts</span> {" "}
+            <span className="text-green-400 font-semibold flex gap-2 items-center">Tracker <span><TbMapPin2/></span></span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>

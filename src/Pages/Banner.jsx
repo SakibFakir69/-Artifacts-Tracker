@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import Lottie from "lottie-react";
 import Animation from "../.././public/Animation - 1734847094457.json";
+import { Link } from "react-router-dom";
 
 function Banner() {
   return (
@@ -77,17 +78,19 @@ function Banner() {
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <a
+              <Link
+              to={'/allartifacts'}
                 className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                 href="#"
                 target="_blank"
               >
                 Get Started
-              </a>
+              </Link>
 
               <a
                 className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-                href="https://en.wikipedia.org/wiki/Artifact"
+                href="https://en.wikipedia.org/wiki/Artifact" 
+                target="_blank"
               >
                 Learn More
               </a>

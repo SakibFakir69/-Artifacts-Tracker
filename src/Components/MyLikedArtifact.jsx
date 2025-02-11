@@ -6,7 +6,11 @@ import { use } from "react";
 import { Helmet } from "react-helmet";
 function MyLikedArtifact() {
   const [liked, setliked] = useState([]);
-  const { user, loading } = useAuth();
+  const { user } = useAuth();
+
+  const [isLoading , setLoading ] = useState(true);
+
+
   
 
   useEffect(() => {
@@ -21,6 +25,7 @@ function MyLikedArtifact() {
           const userLikeData = res.data.filter((item)=>item?.LikedBy?.includes(user.email));
 
           console.log(userLikeData ,"user")
+          setLoading(false);
 
      
           
@@ -50,7 +55,7 @@ function MyLikedArtifact() {
   }
 
   return (
-    <div className="px-4 bg-gray-300 -mt-6 ">
+    <div className="">
 
       <h1 className="mt-6 md:text-4xl font-semibold text-2xl text-center">
         My Liked Artifacts
@@ -59,14 +64,24 @@ function MyLikedArtifact() {
         <title>My liked arifacts</title>
       </Helmet>
 
-      <div className="grid md:grid-cols-3 grid-cols-1 m-2 py-20">
 
-        {liked.map((item, key) => (
-          <LikeArtifact alldata={item} key={key} />
-        ))}
+      {
+        isLoading ? (<div className="flex  w-full justify-center items-center mx-auto">
+          <span className="loading loading-bars  w-16"></span>
+
+        </div>) :
+        (
+          <div className="grid md:grid-cols-3 grid-cols-1 m-2 py-20 bg-stone-200">
+    
+            {liked.map((item, key) => (
+              <LikeArtifact alldata={item} key={key} />
+            ))}
+    
+    
+          </div>)
+      }
 
 
-      </div>
     </div>
   );
 }
