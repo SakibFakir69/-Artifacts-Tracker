@@ -10,7 +10,7 @@ function FeaturedPage() {
   const [ data , setdata ] = useState([]);
 
   useEffect(()=>{
-    axios.get(`https://server-sable-sigma-67.vercel.app/higestLikeCount`)
+    axios.get(`https://server-vert-two-78.vercel.app/higestLikeCount`)
     .then((res)=>{
       setdata(res.data);
     })
@@ -37,7 +37,7 @@ function FeaturedPage() {
 
 
   return (
-    <div className='bg-blue-200 p-6'>
+    <div className='bg-stone-100 p-6'>
       
       <h1 className='text-2xl md:text-4xl font-bold text-center mt-4'>Most <span className='text-red-700'>Liked</span> Artifacts</h1>
 

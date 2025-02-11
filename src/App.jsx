@@ -15,7 +15,7 @@ function App() {
       
 
       {/*  */}
-      <main>
+      <main className=' '>
         <Outlet/>
         
       </main>

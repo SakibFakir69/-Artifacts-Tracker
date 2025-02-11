@@ -12,7 +12,7 @@ function MyLikedArtifact() {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`https://server-sable-sigma-67.vercel.app/allartifacts`)
+        .get(`https://server-vert-two-78.vercel.app/allartifacts`)
 
         .then((res) => {
 
@@ -43,14 +43,15 @@ function MyLikedArtifact() {
 
   if (liked.length == 0) {
     return (
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center py-52">
         <p>No Liked Data founded</p>
       </div>
     );
   }
 
   return (
-    <div className="px-4 bg-gray-300 -mt-6">
+    <div className="px-4 bg-gray-300 -mt-6 ">
+
       <h1 className="mt-6 md:text-4xl font-semibold text-2xl text-center">
         My Liked Artifacts
       </h1>
@@ -58,10 +59,13 @@ function MyLikedArtifact() {
         <title>My liked arifacts</title>
       </Helmet>
 
-      <div className="grid md:grid-cols-3 grid-cols-1 m-2">
+      <div className="grid md:grid-cols-3 grid-cols-1 m-2 py-20">
+
         {liked.map((item, key) => (
           <LikeArtifact alldata={item} key={key} />
         ))}
+
+
       </div>
     </div>
   );

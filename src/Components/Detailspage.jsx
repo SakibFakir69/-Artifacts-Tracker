@@ -23,14 +23,12 @@ function Detailspage() {
 
   return (
     <div>
-        <h1 className='md:text-4xl font-semibold text-2xl text-center mt-4'>Artifact Details Page</h1>
-        <Helmet>
-            <title>Detilas page</title>
-        </Helmet>
 
-        <hr className='mt-4'/>
 
-        <div className='mt-10 flex justify-center mb-10 '>
+
+        <hr className=''/>
+
+        <div className='mt-10 flex justify-center mb-10 py-24 '>
             {
                 artifact.map((item,key)=> <ShowDetailsPage alldata={item} key={key}/>)
                 

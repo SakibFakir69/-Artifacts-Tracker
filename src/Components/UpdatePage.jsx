@@ -39,7 +39,7 @@ function UpdatePage() {
     const formData = new FormData(event.target);
     const info = Object.fromEntries(formData);
 
-    fetch(`https://server-sable-sigma-67.vercel.app/allartifacts/${_id}`, 
+    fetch(`hhttps://server-vert-two-78.vercel.app/allartifacts/${_id}`, 
       {
         method :'PUT',
         headers:{

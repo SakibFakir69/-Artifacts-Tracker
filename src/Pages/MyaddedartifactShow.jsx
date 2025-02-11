@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function MyaddedartifactShow({ data ,onDeletehandel}) {
+
   const {
     Artifact_Name,
     Artifact_Image,
@@ -16,12 +17,22 @@ function MyaddedartifactShow({ data ,onDeletehandel}) {
   } = data;
 
 
+  if(!data)
+    {
+          return <div className="flex justify-center mt-6 py-52">
+            <p>No data founded</p>
+        </div>
+    }
+
+
+
 
 
 
   return (
     <div>
-      <section className="flex justify-center mt-4 m-4">
+      <section className="flex justify-center mt-4 m-4 ">
+
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800 border">
             
           <div className="flex space-x-4">

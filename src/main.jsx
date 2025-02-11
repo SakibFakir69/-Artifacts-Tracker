@@ -62,7 +62,7 @@ const route = createBrowserRouter([
       {
         path: "/updatepage/:id",
         element: <UpdatePage/>,
-        loader : ({params})=> fetch(`https://server-sable-sigma-67.vercel.app/myaddedartifacts/${params.id}`)
+        loader : ({params})=> fetch(`https://server-vert-two-78.vercel.app/myaddedartifacts/${params.id}`)
         
       },
 
@@ -76,7 +76,7 @@ const route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://server-sable-sigma-67.vercel.app/detailspage/${params.id}`),
+          fetch(`https://server-vert-two-78.vercel.app/detailspage/${params.id}`),
       },
       // my liked artifact
      

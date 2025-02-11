@@ -51,7 +51,7 @@ function AddArtifcats() {
    
 
     axios
-      .post("https://server-sable-sigma-67.vercel.app/addartifact",  artifactUserData )
+      .post("https://server-vert-two-78.vercel.app/addartifact",  artifactUserData )
       .then((data) => {
         if (data.status) {
           toast.success("Add artifact sucesfully");
@@ -71,7 +71,8 @@ function AddArtifcats() {
   };
 
   return (
-    <div className="">
+    <div className="py-16">
+
       <Helmet>
         <title>Add artifact</title>
       </Helmet>

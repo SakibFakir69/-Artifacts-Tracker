@@ -18,7 +18,7 @@ function MyArtifactsAdd() {
     const [ data ,setdata ] = useState([]);
 
     useEffect(()=>{
-        axios.get(`https://server-sable-sigma-67.vercel.app/myaddedartifacts?email=${user?.email}`)
+        axios.get(`https://server-vert-two-78.vercel.app/myaddedartifacts?email=${user?.email}`)
         .then((res)=>{
             
             console.log(res.data)
@@ -47,7 +47,7 @@ function MyArtifactsAdd() {
               }).then((result) => {
                 if (result.isConfirmed) {
 
-                    axios.delete(`https://server-sable-sigma-67.vercel.app/myaddedartifacts/${id}`)
+                    axios.delete(`hhttps://server-vert-two-78.vercel.app/myaddedartifacts/${id}`)
                     .then(()=>{
 
                         const filterdeleted = data.filter((item)=> item._id!==id);
@@ -66,19 +66,13 @@ function MyArtifactsAdd() {
 
     }
 
-    if(data.length==0)
-    {
-          return <div className="flex justify-center mt-6">
-            <p>No data founded</p>
-        </div>
-    }
 
 
   return (
-    <div className='bg-red-200'>
+    <div className='bg-red-200 '>
         
 
-        <div className='grid md:grid-cols-3 grid-cols-1 gap-4 p-4'>
+        <div className='grid md:grid-cols-3 grid-cols-1 gap-4 p-4 py-24'>
             {
                 data.map((item,key)=> <MyaddedartifactShow data={item} key={key} onDeletehandel={onDeletehandel}/>)
             }

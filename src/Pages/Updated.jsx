@@ -20,7 +20,7 @@ function Updated({ info }) {
   const UpdateButtonhandel = (event) => {
     event.preventDefault();
 
-    axios.put(`https://server-sable-sigma-67.vercel.app/allartifacts/${_id}`, info).then((res) => {
+    axios.put(`hhttps://server-vert-two-78.vercel.app/allartifacts/${_id}`, info).then((res) => {
       console.log(res.data);
       console.log(info,"dffsdf")
     });

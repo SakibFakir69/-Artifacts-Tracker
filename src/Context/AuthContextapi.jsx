@@ -76,11 +76,11 @@ function AuthContextapi({ children }) {
           console.log("got email");
           const user = {email: currentUser?.email};
 
-          axios.post('https://server-sable-sigma-67.vercel.app/jwt',user, {withCredentials:true})
+          axios.post('hhttps://server-vert-two-78.vercel.app/jwt',user, {withCredentials:true})
           .then((res)=>{setloading(false), console.log(res.data ,"log in")});
 
         }else{
-          axios.post('https://server-sable-sigma-67.vercel.app/signout',user, {withCredentials:true})
+          axios.post('hhttps://server-vert-two-78.vercel.app/signout',user, {withCredentials:true})
           .then(res =>{setloading(false), console.log(res.data,"log out")})
         }
         

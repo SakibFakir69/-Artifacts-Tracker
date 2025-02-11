@@ -16,7 +16,8 @@ function AllShowArtifacts({ data }) {
     _id,
   } = data;
 
-  console.log(_id);
+
+
 
   return (
     <div >
@@ -26,17 +27,17 @@ function AllShowArtifacts({ data }) {
           <div>Loading...</div>
         ) : (
           <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-4 hover:shadow-xl hover:border duration-150">
+            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-4 hover:shadow-xl hover:border duration-150 p-4">
               <img
                 src={Artifact_Image}
                 alt=""
                 className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 rounded-md"
               />
-              <div className="flex flex-col justify-between p-6 space-y-8">
-                <div className="space-y-2">
-                  <p > <span className="text-red-500 font-semibold">Name </span> : {Artifact_Name}</p>
-                  <p> <span className="text-pink-500 font-semibold">Create At</span> : {create_At}</p>
-                  <p> <span className="text-emerald-500">Artifact Type </span> : {Artifact_Type}</p>
+              <div className="flex flex-col justify-between p-6 space-y-2">
+                <div className="space-y-1">
+                  <p >  {Artifact_Name}</p>
+                  <p> {create_At}</p>
+                  <p>  {Artifact_Type}</p>
                 </div>
 
                 <NavLink
