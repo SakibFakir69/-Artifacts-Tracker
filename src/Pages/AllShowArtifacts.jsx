@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function AllShowArtifacts({ data }) {
   const {
+
     Artifact_Type: Artifact_Type,
     Historical_Context,
 
@@ -13,6 +14,7 @@ function AllShowArtifacts({ data }) {
     LikeCount,
     Artifact_Name,
     Artifact_Image,
+
     _id,
   } = data;
 
@@ -31,13 +33,13 @@ function AllShowArtifacts({ data }) {
               <img
                 src={Artifact_Image}
                 alt=""
-                className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500 rounded-md"
+                className=" w-full rounded-t-md h-60 dark:bg-gray-500 rounded-md"
               />
               <div className="flex flex-col justify-between p-6 space-y-2">
                 <div className="space-y-1">
-                  <p >  {Artifact_Name}</p>
-                  <p> {create_At}</p>
-                  <p>  {Artifact_Type}</p>
+                  <p className="text-xl font-semibold" >  {Artifact_Name}</p>
+                  <p className="text-slate-500"> {create_At}</p>
+                  <p className="text-slate-500">  {Artifact_Type}</p>
                 </div>
 
                 <NavLink

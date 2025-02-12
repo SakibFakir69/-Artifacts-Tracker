@@ -16,6 +16,8 @@ function AuthContextapi({ children }) {
   const [loading, setloading] = useState(true);
 
   const [ photo , setphoto ] = useState([]);
+    const [ darkmode , setdarkmode ] = useState(false);
+    
   
 
 
@@ -54,7 +56,9 @@ function AuthContextapi({ children }) {
     loading,
     setloading,
     CreateUser,setphoto,
-    CreateUserWithGoogle,LoginUser,GoogleLoginIn,setlikedpost,photo
+    CreateUserWithGoogle,LoginUser,GoogleLoginIn,setlikedpost,photo,
+    darkmode,setdarkmode
+
   };
 
   // onchanged

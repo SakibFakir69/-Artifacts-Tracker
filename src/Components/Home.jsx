@@ -8,9 +8,14 @@ import ExtraPage2 from '../Pages/ExtraPage2'
 import FeaturedPage from '../Pages/FeaturedPage'
 import { Helmet } from 'react-helmet'
 import NewsLetter from './NewsLetter'
+
+import useAuth from '../hooks/useAuth'
 function Home() {
+
+  const { darkmode } = useAuth(); // Get darkmode from context
   return (
     <div>
+
       <Helmet>
         <title>home</title>
       </Helmet>
@@ -29,7 +34,7 @@ function Home() {
 
       </main>
 
-      <Footer/>
+
 
 
 
