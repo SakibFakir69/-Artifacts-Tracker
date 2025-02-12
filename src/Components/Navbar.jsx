@@ -70,7 +70,7 @@ function Navbar() {
 
       fixed
       backdrop-blur-md
-      bg-stone-100 bg-transparent
+      bg-stone-100 
   
       z-50
       ">
@@ -124,9 +124,10 @@ function Navbar() {
 
         <div className="navbar-end flex gap-4 ">
 
-          <Link className="size-10 border rounded-full">
+          {/* <Link className="size-10 border rounded-full">
             <img src={photo || user?.photoURL} />
-          </Link>
+          </Link> */}
+          {/* need improved */}
 
           {user ? (
             <div>

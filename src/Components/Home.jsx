@@ -7,6 +7,7 @@ import ExtraPage1 from '../Pages/ExtraPage1'
 import ExtraPage2 from '../Pages/ExtraPage2'
 import FeaturedPage from '../Pages/FeaturedPage'
 import { Helmet } from 'react-helmet'
+import NewsLetter from './NewsLetter'
 function Home() {
   return (
     <div>
@@ -23,6 +24,7 @@ function Home() {
 
         <ExtraPage1/>
         <ExtraPage2/>
+        <NewsLetter/>
 
 
       </main>
