@@ -163,11 +163,12 @@ function Navbar() {
             <div>
               <button
                 onClick={logout}
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+                className="bg-red-400 px-8 py-2 border text-white font-semibold rounded"
+               
               >
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Log out
-                </span>
+                Log out
+                
+
               </button>
 
               {/* <select onChange={handelChnage} className="border-2 p-1 rounded-md  md:w-32 md:h-10 ">
@@ -183,7 +184,7 @@ function Navbar() {
             <div>
               <NavLink
                 to={"/authloayout/signin"}
-                className={"btn px-6 border-2"}
+                className={"btn px-6  bg-red-200"}
               >
                 Log In
               </NavLink>
