@@ -8,16 +8,16 @@ function FeaturedShowInfo({ data }) {
     <div>
       <div className="card bg-base-100 w-96 hover:shadow-xl border mt-4">
 
-        <figure className="px-10 pt-10 w-full">
+        <figure className="px-8 pt-10 w-full">
           <img
             src={Artifact_Image}
             alt={Artifact_Name}
-            className="rounded-xl w-10/12"
+            className="rounded-xl  h-64 w-full"
           />
         </figure>
-        <div className="card-body items-center text-center border-2">
+        <div className="card-body items-center text-center">
 
-        <div className="border">
+        <div className="">
 
         <p className="text-black font-semibold"> {Artifact_Name}</p>
          <p className="text-slate-600"> {Historical_Context}</p>

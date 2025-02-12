@@ -15,8 +15,19 @@
 }
 
 
+
+.open-sans-roboto {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
 body{
-  font-family: exo-2-custome_font;
+  font-family: open-sans-roboto;
 }
 /*  
 @layer base {

@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/road-map-line.svg" class="favicon"  />
     <!-- add img -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Historical Artifacts Tracker</title>
@@ -10,6 +10,19 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
     rel="stylesheet"
 />
+<style>
+  /* Default color for light mode */
+  .favicon{
+    fill: #000000; /* Black */
+  }
+
+  /* Color for dark mode */
+  @media (prefers-color-scheme: dark) {
+    .favicon path {
+      fill: #ffffff; /* White */
+    }
+  }
+</style>
     
   </head>
   <body>
