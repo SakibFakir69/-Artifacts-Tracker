@@ -3,13 +3,19 @@
 
 
 
-project_Name : Historical Artifacts Tracker
-Live_url : https://historyartifact.netlify.app/
 
-key feature : 
-  1.easy to use 
-  2. you can update and delete
-  3.you can like you favrite post
+
+  # Artifacts Tracker
+
+A web application for adding, managing, and viewing artifacts. Users can track their collections with detailed information.
+
+## Live Link
+https://historyartifact.netlify.app/
+
+## Features
+- Add new artifacts
+- View and manage your artifacts
+- Easy-to-use interface for organizing collections
 
 Npm_pacakge: 
   1.react toastify
@@ -17,3 +23,4 @@ Npm_pacakge:
   3.sweralert2
   4.typewriter
   5. React helmet
+
