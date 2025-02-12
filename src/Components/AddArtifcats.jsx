@@ -77,7 +77,7 @@ function AddArtifcats() {
         <title>Add artifact</title>
       </Helmet>
 
-      <section className="bg-gradient-to-br  from-green-100">
+      <section className="">
 
         {/* here  create post req and form */}
         <div className="">
@@ -91,11 +91,15 @@ function AddArtifcats() {
         </div> */}
 
         <ToastContainer />
+      
 
-        <section className="w-full ">
+        <section className="w-full bg-stone-200 -mt-12 border-2 border-red-500  p-6 ">
+          <div className="md:h-20 h-10">
+
+          </div>
 
           <form
-            class="mx-auto  p-4 rounded-md shadow-xl border flex flex-col gap-4 mt-6  w-10/12 p-6"
+            class="mx-auto   rounded-md shadow-xl border flex flex-col gap-4 mt-6  w-10/12 p-6 bg-white"
             onSubmit={handeladdArtifactsFormData}
           >
             <div class="relative z-0 w-full  group ">
@@ -226,12 +230,14 @@ function AddArtifcats() {
               >
                 Add Artifact
               </button>
+       
             </div>
           </form>
         </section>
 
-        <div className="mt-10 invisible">asd</div>
+
       </section>
+      
     </div>
   );
 }

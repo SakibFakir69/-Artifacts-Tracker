@@ -18,7 +18,7 @@ function MyaddedartifactShow({ data, onDeletehandel }) {
   if (!data) {
     return (
       <div className="flex justify-center mt-6 py-52">
-        <p>No data founded</p>
+        <p className="text-black text-4xl text-center">No data founded</p>
       </div>
     );
   }

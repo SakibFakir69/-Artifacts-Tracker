@@ -52,27 +52,26 @@ function MyArtifactsAdd() {
   };
 
   return (
-    <div className=" ">
-
-      <div className=" p-4 py-24">
-
-        {loading ? (
-          <div className="flex w-full justify-center items-center mx-auto">
-            <span className="loading loading-bars  w-16"></span>
-          </div>
-        ) : (
-
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-4 p-4 bg-stone-200">
-            {data.map((item, key) => (
-              <MyaddedartifactShow
-                data={item}
-                key={key}
-                onDeletehandel={onDeletehandel}
-              />
-            ))}
-          </div>
-        )}
-      </div>
+    <div className="p-4 py-24">
+      {loading ? (
+        <div className="flex w-full justify-center items-center mx-auto">
+          <span className="loading loading-bars w-16"></span>
+        </div>
+      ) : data.length > 0 ? (
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-4 p-4 bg-stone-200">
+          {data.map((item) => (
+            <MyaddedartifactShow
+              data={item}
+              key={item._id}
+              onDeleteHandler={onDeletehandel}
+            />
+          ))}
+        </div>
+      ) : (
+        <h2 className="text-2xl font-semibold text-center">
+           No data found 😞
+        </h2>
+      )}
     </div>
   );
 }
