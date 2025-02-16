@@ -186,7 +186,7 @@ function AllArtifacts() {
           </div>
 
           <section className="">
-            <div className="grid md:grid-cols-4 gap-4 grid-cols-1 m-2  ">
+            <div className="grid md:grid-cols-4 gap-4 grid-cols-1 m-2   ">
               {serachData.map((item, key) => (
                 <AllShowArtifacts data={item} key={key} />
               ))}

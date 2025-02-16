@@ -22,18 +22,18 @@ function AllShowArtifacts({ data }) {
 
 
   return (
-    <div >
+    <div  className="">
 
       <section>
         {data.length === 0 ? (
           <div>Loading...</div>
         ) : (
           <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-black dark:text-white m-4 hover:shadow-xl hover:border duration-150 p-4 transition delay-150 bg-white h-96 ">
+            <div className="max-w-xs rounded-md shadow-md   m-4 hover:shadow-xl hover:border duration-150 p-4 transition delay-150 bg-white h-96 ">
               <img
                 src={Artifact_Image}
                 alt=""
-                className=" w-full object-cover rounded-t-md h-44 dark:bg-gray-500 rounded-md"
+                className=" w-full object-cover rounded-t-md h-44 rounded-md"
               />
               <div className="flex flex-col justify-between p-6 space-y-1">
 

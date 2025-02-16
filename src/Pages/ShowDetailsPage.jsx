@@ -55,11 +55,11 @@ function ShowDetailsPage({ alldata }) {
   };
 
   return (
-    <div className="bg-white">
+    <div className="b">
 
       <div className="w-full flex-grow flex mx-auto  ">
 
-        <div className="md:flex   px-4 space-y-4  border p-4 bg-stone-200 items-center mx-auto   w-full justify-evenly shadow-lg shadow-slate-950 rounded">
+        <div className="md:flex   px-4 space-y-4  border p-4 bg-stone-200 dark:bg-black items-center mx-auto   w-full justify-evenly shadow-lg shadow-slate-950 rounded border-stone-200/40">
 
           <img
             src={Artifact_Image}
@@ -72,14 +72,16 @@ function ShowDetailsPage({ alldata }) {
             <div className="flex flex-col space-y-5 p-3">
 
               <p className="text-xl font-semibold
-              "> {Artifact_Name}</p>
-              <p className="">{ Historical_Context}</p>
-              <p> {Artifact_Type || "not founded"}</p>
-              <p> {create_At || "not founded"}</p>
+             text-black  dark:text-white"> {Artifact_Name}</p>
 
-              <p>{Discovered_At || "not founded"}</p>
-              <p>{Discovered_By || "not founded"}</p>
-              <p> {Present_Location}</p>
+              <p className="text-slate-600 font-semibold dark:text-stone-300">{ Historical_Context}</p>
+              
+              <p className="text-stone-600 font-semibold dark:text-white"> {Artifact_Type || "not founded"}</p>
+              <p className="font-semibold text-slate-500 dark:text-stone-300"> {create_At || "not founded"}</p>
+
+              <p className="text-slate-600 font-semibold dark:text-stone-300">{Discovered_At || "not founded"}</p>
+              <p className="text-slate-600 font-semibold dark:text-stone-300">{Discovered_By || "not founded"}</p>
+              <p className="font-semibold text-slate-600 dark:text-stone-300"> {Present_Location}</p>
 
               <section>
                 <div className="flex flex-wrap  justify-center">
@@ -87,8 +89,8 @@ function ShowDetailsPage({ alldata }) {
                     onClick={handleLike}
                     className={`${
                       like
-                        ? "text-blue-400 ri-thumb-up-line text-2xl md:text-3xl"
-                        : "ri-thumb-up-line text-2xl md:text-3xl"
+                        ? "text-blue-700 ri-thumb-up-line text-2xl md:text-3xl"
+                        : "ri-thumb-up-line text-2xl md:text-3xl text-slate-900"
                     }`}
                   ></i>{" "}
                   {likecount}
