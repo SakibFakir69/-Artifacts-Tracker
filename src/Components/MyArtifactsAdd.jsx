@@ -68,7 +68,7 @@ function MyArtifactsAdd() {
           ))}
         </div>
       ) : (
-        <h2 className="text-2xl font-semibold text-center">
+        <h2 className="text-2xl font-semibold text-center h-screen">
            No data found 😞
         </h2>
       )}

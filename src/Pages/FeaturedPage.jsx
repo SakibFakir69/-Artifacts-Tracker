@@ -37,11 +37,11 @@ function FeaturedPage() {
 
 
   return (
-    <div className='bg-stone-100 p-6'>
+    <div className='bg-stone-100 p-6 dark:bg-black'>
       
       <h1 className='text-2xl md:text-4xl font-bold text-center mt-4'>Most <span className='text-red-700'>Liked</span> Artifacts</h1>
 
-      <div className='grid  md:grid-cols-3 justify-center items-center '>
+      <div className='grid  md:grid-cols-3 justify-center items-center  dark:bg-black'>
       {
         data.map((item,key)=> <FeaturedShowInfo data={item} key={key}/>)
       }

@@ -10,7 +10,7 @@ function ExtraPage1() {
      
 
      
-      <h1 className="text-center  text-2xl md:text-6xl font-semibold mb-4">
+      <h1 className="text-center  text-2xl md:text-6xl font-semibold mb-4 text-red-300">
       <Typewriter
         options={{
           strings:["Popular Historic Periods"],
@@ -23,15 +23,15 @@ function ExtraPage1() {
 
 
       </h1>
-      <hr className="mb-6"></hr>
 
-      <section className="grid md:grid-cols-3 gap-4 justify-center bg-stone-200 p-4">
+
+      <section className="grid md:grid-cols-3 gap-4 justify-center bg-stone-200 p-4 dark:bg-black">
 
         <div class="max-w-sm p-6  border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100
         bg-white 
         
         
-        shadow-lg hover:scale-105 transition duration-200 mb-4">
+        shadow-lg hover:scale-105 transition duration-200 mb-4 dark:bg-black">
 
           <div>
             <img src="e2.png" className="rounded-md shadow-md" />
@@ -61,7 +61,7 @@ function ExtraPage1() {
 
         {/* {/* Classical Greek Period (c. 800 BCE – 146 BCE) */}
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg   hover:shadow-blue-100  mt-2 hover:border-2 hover:border-red-100 hover:shadow-2xl duration-200 relative transition shadow-slate-400 hover:scale-105  mb-4 ">
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg   hover:shadow-blue-100  mt-2 hover:border-2 hover:border-red-100 hover:shadow-2xl duration-200 relative transition shadow-slate-400 hover:scale-105  mb-4 dark:bg-black">
 
           <div>
             <img src="g.jpg" className="rounded-md shadow-md" />
@@ -89,7 +89,7 @@ function ExtraPage1() {
 
         {/* Roman Empire */}
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 ">
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 dark:bg-black">
 
           <div>
             <img src="e2.png" className="rounded-md shadow-md" />
@@ -114,7 +114,7 @@ function ExtraPage1() {
         </div>
         {/* Medieval Period */}
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 ">
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 dark:bg-black">
 
           <div>
             <img src="e2.png" className="rounded-md shadow-md" />
@@ -136,7 +136,7 @@ function ExtraPage1() {
         </div>
         {/* Renaissance */}
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 ">
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4  dark:bg-black">
           <div>
             <img src="e2.png" className="rounded-md shadow-md" />
           </div>
@@ -162,7 +162,7 @@ function ExtraPage1() {
         </div>
         {/*  The Hittite Empire */}
 
-        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 ">
+        <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg  hover:shadow-xl hover:shadow-blue-100 shadow-lg hover:scale-105 duration-200 mb-4 dark:bg-black">
 
           <div>
             <img src="e2.png" className="rounded-md shadow-md" />

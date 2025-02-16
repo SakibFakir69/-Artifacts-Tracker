@@ -29,22 +29,24 @@ function AllShowArtifacts({ data }) {
           <div>Loading...</div>
         ) : (
           <div>
-            <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 m-4 hover:shadow-xl hover:border duration-150 p-4">
+            <div className="max-w-xs rounded-md shadow-md dark:bg-black dark:text-white m-4 hover:shadow-xl hover:border duration-150 p-4 transition delay-150 bg-white h-96 ">
               <img
                 src={Artifact_Image}
                 alt=""
-                className=" w-full rounded-t-md h-60 dark:bg-gray-500 rounded-md"
+                className=" w-full object-cover rounded-t-md h-44 dark:bg-gray-500 rounded-md"
               />
-              <div className="flex flex-col justify-between p-6 space-y-2">
+              <div className="flex flex-col justify-between p-6 space-y-1">
+
                 <div className="space-y-1">
-                  <p className="text-xl font-semibold" >  {Artifact_Name}</p>
+                  <p className="text-xl font-semibold text-black" >  {Artifact_Name}</p>
+
                   <p className="text-slate-500"> {create_At}</p>
                   <p className="text-slate-500">  {Artifact_Type}</p>
                 </div>
 
                 <NavLink
                   to={`/detailspage/${_id}`}
-                  className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
+                  className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50 bg-violet-800 text-white"
                 >
                   View Details
                 </NavLink>

@@ -51,7 +51,7 @@ function MyLikedArtifact() {
         </div>
       ) : (
 
-        liked.length > 0 ? (  <div className="grid md:grid-cols-3 grid-cols-1  py-20 bg-stone-200 ">
+        liked.length > 0 ? (  <div className="grid ld:grid-cols-3 md:grid-cols-2 grid-cols-1  py-20 bg-stone-200 dark:bg-black ">
           {liked.map((item, key) => (
             <LikeArtifact alldata={item} key={key} />
           ))}

@@ -51,12 +51,12 @@ function NewsLetter() {
 
   return (
     <div>
-      <section class="bg-white dark:bg-gray-900 m-2 rounded">
+      <section class="bg-red-400 dark:bg-black m-2 rounded dark:border ">
         <div class="max-w-3xl px-6 py-16 mx-auto text-center">
           <h1 class="text-3xl font-semibold text-white">
             Subscribe Now & Stay Updated on Rare Artifacts! 🚀
           </h1>
-          <p class="max-w-md mx-auto mt-5 text-gray-500 dark:text-gray-400">
+          <p class="max-w-md mx-auto mt-5  text-stone-200 dark:text-gray-400">
           Track, discover, and preserve artifacts with ease! Stay updated on rare finds, historical treasures, and expert insights—delivered straight to your inbox.
             
 

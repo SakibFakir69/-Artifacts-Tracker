@@ -115,7 +115,7 @@ function AllArtifacts() {
           <span className="loading loading-bars  flex w-20 h-20 mx-auto justify-center items-center py-40"></span>
         </div>
       ) : (
-        <section className="bg-stone-100 py-20">
+        <section className="bg-stone-100 py-20 dark:bg-black">
           <div className="absolute w-full text-center py-32 ">
             {serachData.length === 0 && (
               <p>🚫 No matching artifacts found! 🔍</p>

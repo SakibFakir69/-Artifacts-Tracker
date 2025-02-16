@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Auth from "../Firebase/ConfigF";
@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 import { TbMapPin2 } from "react-icons/tb";
 
 function Navbar() {
-  const { user, setloading, setuser, photo,darkmode,setdarkmode } = useAuth();
+  const { user, setloading, setuser, photo, darkmode, setdarkmode } = useAuth();
   console.log(user);
 
   console.log(photo, "sdf");
@@ -41,15 +41,43 @@ function Navbar() {
     navgate(selectedValue);
   };
 
+  const [mode, setmodode] = useState("light");
 
+  const changeTheme = () => {
 
+    const html = document.documentElement;
 
+    if (mode === "light") {
+      html.classList.remove("light");
+      html.classList.add("dark");
+      setmodode("dark");
+      localStorage.setItem("mode", "dark");
+    }else{
+      html.classList.remove("dark");
+      html.classList.add("light");
+      setmodode("light");
+      localStorage.setItem("mode","light");
 
+    }
+  };
+
+  useEffect(()=>{
+
+   const currentMode =  localStorage.getItem("mode") || "light"
+
+   setmodode(currentMode);
+
+   const html = document.documentElement;
+
+   html.classList.add(currentMode)
+   
+
+  },[])
 
   const links = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/"} className={''}>Home</NavLink>
       </li>
       <li>
         <NavLink to={"/allartifacts"}>All Artifacts</NavLink>
@@ -101,14 +129,13 @@ function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm 
+              dark:text-white
+              
+              dropdown-content bg-white dark:bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
-              <select onChange={handelChnage} className="border p-1 rounded-md">
-                <option value={""}>Select</option>
-                <option value="mylikedartifact">My Liked</option>
-                <option value="/myadedaartifacts">My Added artifacts</option>
-              </select>
+             
             </ul>
           </div>
           <Link to={"/"} className="flex gap-3 justify-center items-center">
@@ -128,15 +155,16 @@ function Navbar() {
         </div>
 
         <div className="navbar-end flex gap-4 ">
-          <label className="swap swap-rotate">
+
+
+          <label className="swap swap-rotate ">
             {/* this hidden checkbox controls the state */}
             <input type="checkbox" />
 
             {/* sun icon */}
             <svg
-
-            onClick={()=> setdarkmode(true)}
-              className="swap-on h-8 w-8 fill-current"
+              onClick={changeTheme}
+              className="swap-on md:h-8 h-6 w-6 md:w-8 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -145,8 +173,8 @@ function Navbar() {
 
             {/* moon icon */}
             <svg
-            onClick={()=> setdarkmode(false)}
-              className="swap-off h-10 w-10 fill-current"
+              onClick={changeTheme}
+              className="swap-off md:h-8 h-6 md:w-8 w-6 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
             >
@@ -163,12 +191,9 @@ function Navbar() {
             <div>
               <button
                 onClick={logout}
-                className="bg-red-400 px-8 py-2 border text-white font-semibold rounded"
-               
+                className="bg-red-400 md:px-8 px-6 py-2 border p-2 text-white font-semibold rounded"
               >
                 Log out
-                
-
               </button>
 
               {/* <select onChange={handelChnage} className="border-2 p-1 rounded-md  md:w-32 md:h-10 ">
@@ -184,7 +209,7 @@ function Navbar() {
             <div>
               <NavLink
                 to={"/authloayout/signin"}
-                className={"btn px-6  bg-red-200"}
+                className={" md:px-8  md:py-3 py-2  p-2 rounded bg-red-400 text-white"}
               >
                 Log In
               </NavLink>
